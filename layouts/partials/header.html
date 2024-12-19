@@ -1,50 +1,9 @@
-{{- /* theme-toggle is enabled */}}
-{{- if (not site.Params.disableThemeToggle) }}
-{{- /* theme is light */}}
-{{- if (eq site.Params.defaultTheme "light") }}
-<script>
-    if (localStorage.getItem("pref-theme") === "dark") {
-        document.body.classList.add('dark');
-    }
-
-</script>
-{{- /* theme is dark */}}
-{{- else if (eq site.Params.defaultTheme "dark") }}
-<script>
-    if (localStorage.getItem("pref-theme") === "light") {
-        document.body.classList.remove('dark')
-    }
-
-</script>
-{{- else }}
-{{- /* theme is auto */}}
-<script>
-    if (localStorage.getItem("pref-theme") === "dark") {
-        document.body.classList.add('dark');
-    } else if (localStorage.getItem("pref-theme") === "light") {
-        document.body.classList.remove('dark')
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.body.classList.add('dark');
-    }
-
-</script>
-{{- end }}
-{{- /* theme-toggle is disabled and theme is auto */}}
-{{- else if (and (ne site.Params.defaultTheme "light") (ne site.Params.defaultTheme "dark"))}}
-<script>
-    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.body.classList.add('dark');
-    }
-
-</script>
-{{- end }}
-
 <header class="header">
     <nav class="nav">
         <div class="logo">
             {{- $label_text := (site.Params.label.text | default site.Title) }}
             {{- if site.Title }}
-            <a href="{{ "" | absLangURL }}" accesskey="h" title="{{ $label_text }} (Alt + H)">
+            <a href="{{ "" | absLangURL }}" accesskey="h" title="{{ $label_text }} (Alt + H)" id="logo-text">
                 {{- if site.Params.label.icon }}
                 {{- $img := resources.Get site.Params.label.icon }}
                 {{- if $img }}
@@ -97,10 +56,8 @@
                 {{- end }}
 
                 {{- $lang := .Lang}}
-                {{- $separator := or $label_text (not site.Params.disableThemeToggle)}}
                 {{- with site.Home.AllTranslations }}
                 <ul class="lang-switch">
-                    {{- if $separator }}<li>|</li>{{ end }}
                     {{- range . -}}
                     {{- if ne $lang .Lang }}
                     <li>
@@ -147,3 +104,38 @@
         </ul>
     </nav>
 </header>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const themeToggle = document.getElementById('theme-toggle');
+        const logoText = document.getElementById('logo-text');
+
+        // Function to toggle theme and update text
+        function toggleTheme() {
+            document.body.classList.toggle('dark');
+            if (document.body.classList.contains('dark')) {
+                logoText.textContent = '帮我开下灯';
+            } else {
+                logoText.textContent = '帮我关下灯';
+            }
+            localStorage.setItem("pref-theme", document.body.classList.contains('dark') ? 'dark' : 'light');
+        }
+
+        // Initialize theme based on user preference or system preference
+        function initializeTheme() {
+            if (localStorage.getItem("pref-theme") === "dark" || (!('pref-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.body.classList.add('dark');
+                logoText.textContent = '帮我开下灯';
+            } else {
+                document.body.classList.remove('dark');
+                logoText.textContent = '帮我关下灯';
+            }
+        }
+
+        // Add event listener to theme toggle button
+        themeToggle.addEventListener('click', toggleTheme);
+
+        // Initialize theme on page load
+        initializeTheme();
+    });
+</script>
