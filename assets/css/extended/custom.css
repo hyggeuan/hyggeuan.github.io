@@ -88,18 +88,44 @@
     font-size: 14px;
 }
 
-/* 确保主界面的内容居中显示 */
-.content {
+/* 确保分类、标签、搜索等页面的内容居中显示 */
+.taxonomy, .search, .archive {
     max-width: 1200px; /* 设置最大宽度 */
     margin-left: auto; /* 居中对齐 */
     margin-right: auto; /* 居中对齐 */
     padding: 20px; /* 添加一些内边距以便更好地查看内容 */
 }
 
-/* 调整分类、标签、搜索等页面的内容 */
-.taxonomy, .search {
+/* 确保分类、标签、搜索等页面的内部内容居中 */
+.taxonomy .content, .search .content, .archive .content {
     max-width: 1200px; /* 设置最大宽度 */
     margin-left: auto; /* 居中对齐 */
     margin-right: auto; /* 居中对齐 */
     padding: 20px; /* 添加一些内边距以便更好地查看内容 */
+}
+
+/* 标题居中 */
+.taxonomy h1, .search h1, .archive h1 {
+    text-align: center;
+}
+
+/* 标签小方块居中 */
+.tags {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px; /* 调整标签之间的间距 */
+}
+
+/* 标签小方块样式 */
+.tag-item {
+    background-color: #f0f0f0;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: #333;
+    text-decoration: none;
+}
+
+.tag-item:hover {
+    background-color: #e0e0e0;
 }
