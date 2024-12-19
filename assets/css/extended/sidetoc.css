@@ -1,8 +1,11 @@
 /* sidetoc.css */
 .post-single {
     display: grid;
-    grid-template-columns: minmax(250px, 250px) 1fr; /* 目录宽度为250px，正文占据剩余空间 */
+    grid-template-columns: 250px 1fr; /* 目录宽度为250px，正文占据剩余空间 */
     gap: 20px; /* 设置目录和正文之间的间距 */
+    margin-left: 20px; /* 设置整个页面的左边距 */
+    max-width: 1200px; /* 设置最大宽度 */
+    margin: 0 auto; /* 居中对齐 */
 }
 
 .post-single .toc {
@@ -30,20 +33,20 @@
 .post-single .toc li a {
     text-decoration: none;
     color: inherit;
-    font-size: 16px; /* Default font size for top level */
+    font-size: 16px; /* 默认字体大小 */
     display: block;
 }
 
 .post-single .toc li ul li a {
     font-size: 14px;
-    margin-left: 10px; /* Indent slightly for sub-level */
+    margin-left: 10px; /* 子级缩进 */
 }
 
 .post-single .toc li ul li ul li a {
     font-size: 12px;
-    margin-left: 20px; /* Indent slightly more for deeper levels */
+    margin-left: 20px; /* 次子级缩进 */
 }
 
 .post-single .toc li a:hover {
-    color: #007bff; /* Change to a color when hovering */
+    color: #007bff; /* 悬停时的颜色变化 */
 }
