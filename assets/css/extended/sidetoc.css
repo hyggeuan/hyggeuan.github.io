@@ -1,30 +1,21 @@
 /* sidetoc.css */
 .post-single {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 3fr); /* 目录在左侧，正文在右侧 */
+    grid-template-columns: minmax(250px, 250px) 1fr; /* 目录宽度为250px，正文占据剩余空间 */
+    gap: 20px; /* 设置目录和正文之间的间距 */
 }
 
 .post-single .toc {
-    grid-column: 1; /* 目录在左侧 */
     position: sticky;
     top: var(--header-height);
-    margin-right: 20px; /* 与正文内容保持20px的间距 */
-    width: 200px; /* 设置目录宽度 */
     background-color: rgba(56, 54, 54, 0.8); /* 目录背景色 */
     padding: 10px;
-    margin-left: 20px; /* 设置左侧边距 */
+    width: 100%; /* 确保目录宽度适应其容器 */
 }
 
 .post-single .toc #TableOfContents {
-    overflow-y: auto;
-    overflow-x: auto;
-    padding-left: 10px; /* 添加适当的左内边距 */
-    max-height: 70vh;
-}
-
-.post-single .toc .inner {
-    margin: 5px;
-    padding: 0;
+    overflow-y: auto; /* 启用垂直滚动 */
+    max-height: 70vh; /* 设置最大高度 */
 }
 
 .post-single .toc ul {
@@ -38,26 +29,19 @@
 
 .post-single .toc li a {
     text-decoration: none;
-}
-
-.post-single .toc li a:link, .post-single .toc li a:visited {
     color: inherit;
-}
-
-.post-single .toc li a {
     font-size: 16px; /* Default font size for top level */
     display: block;
-    margin-left: 0;
 }
 
 .post-single .toc li ul li a {
     font-size: 14px;
-    margin-left: 3px; /* Indent slightly for sub-level */
+    margin-left: 10px; /* Indent slightly for sub-level */
 }
 
 .post-single .toc li ul li ul li a {
     font-size: 12px;
-    margin-left: 6px; /* Indent slightly more for deeper levels */
+    margin-left: 20px; /* Indent slightly more for deeper levels */
 }
 
 .post-single .toc li a:hover {

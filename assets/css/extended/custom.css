@@ -13,50 +13,40 @@
     flex-grow: 1; /* This will make the nav take up all available space on the right */
 }
 
-#toc {
-    position: sticky;
-    top: var(--header-height);
-    height: calc(100vh - var(--header-height));
-    overflow-y: auto; /* Enable vertical scrolling if content overflows */
-    width: 250px; /* Adjust width as needed */
-    padding: 10px;
-    background-color: rgba(56, 54, 54, 0.8); /* Background color for the ToC */
-    margin-left: 20px; /* Set the left margin to create space between the edge and the ToC */
+.post-single {
+    display: grid;
+    grid-template-columns: minmax(250px, 250px) 1fr; /* 目录宽度为250px，正文占据剩余空间 */
+    gap: 20px; /* 设置目录和正文之间的间距 */
+    margin-left: 20px; /* 设置整个页面的左边距 */
+    max-width: 1200px; /* 设置最大宽度 */
+    margin: 0 auto; /* 居中对齐 */
 }
 
-.post-entry {
-    max-width: calc(var(--main-width) + var(--gap) * 10);
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 40px; /* Ensure there's padding to create space for the left-side ToC */
+.post-single .toc {
+    position: sticky;
+    top: var(--header-height);
+    background-color: rgba(56, 54, 54, 0.8); /* 目录背景色 */
+    padding: 10px;
+    width: 100%; /* 确保目录宽度适应其容器 */
+}
+
+.post-single .toc #TableOfContents {
+    overflow-y: auto; /* 启用垂直滚动 */
+    max-height: 70vh; /* 设置最大高度 */
 }
 
 .post-single .entry-content {
-    font-size: 14px; /* Set the base font size for the main content */
+    font-size: 14px; /* 设置正文字体大小 */
 }
 
-.home-info .entry-content img {
-    width: 100%;
-    max-width: fit-content;
-    border-radius: 2%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 10px;
-}
-
-.post-single .entry-cover {
-    max-width: fit-content;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* Center the main title and tags */
 .main-title {
-    text-align: left; /* Left-align the main title */
-    font-size: 24px; /* Make the main title larger than the content */
-    white-space: nowrap; /* Prevent the title from wrapping */
-    overflow: hidden; /* Hide any overflow */
-    text-overflow: ellipsis; /* Show an ellipsis if the title is too long */
+    text-align: left; /* 左对齐标题 */
+    font-size: 28px; /* 设置标题字体大小 */
+    margin-top: 0; /* 移除顶部外边距 */
+    margin-bottom: 20px; /* 设置底部外边距 */
+    white-space: nowrap; /* 防止标题换行 */
+    overflow: hidden; /* 隐藏溢出内容 */
+    text-overflow: ellipsis; /* 显示省略号 */
 }
 
 .tags {
