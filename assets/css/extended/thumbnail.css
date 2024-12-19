@@ -1,4 +1,5 @@
 /* thumbnail.css */
+/* 详情页面的布局 */
 .post-entry {
     display: grid;
     grid-template-columns: 1fr;
