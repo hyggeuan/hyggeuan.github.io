@@ -28,7 +28,7 @@
                 {{- else if hasPrefix site.Params.label.iconSVG "<svg" }}
                     {{ site.Params.label.iconSVG | safeHTML }}
                 {{- end -}}
-                {{- $label_text -}}
+                <span id="logo-text">{{- $label_text -}}</span>
             </a>
             {{- end }}
             <div class="logo-switches">
@@ -108,7 +108,7 @@
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         const themeToggle = document.getElementById('theme-toggle');
-        const logoText = document.querySelector('.logo a');
+        const logoText = document.getElementById('logo-text');
 
         function updateLogoText() {
             if (document.body.classList.contains('dark')) {
@@ -118,9 +118,17 @@
             }
         }
 
-        themeToggle.addEventListener('click', function() {
+        themeToggle.addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent any default action that might refresh the page
             document.body.classList.toggle('dark');
             updateLogoText();
+            
+            // Save theme preference to local storage
+            if (document.body.classList.contains('dark')) {
+                localStorage.setItem("pref-theme", "dark");
+            } else {
+                localStorage.setItem("pref-theme", "light");
+            }
         });
 
         // Initial check on page load
