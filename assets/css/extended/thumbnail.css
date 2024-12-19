@@ -1,13 +1,12 @@
-/* Allocate a single column when the width of the page is small. */
+/* 单列布局适用于小屏幕 */
 .post-entry {
     display: grid;
     grid-template-columns: 1fr;
     grid-gap: 5px 0px;
 }
 
-/* Allocate two columns when there is enough width. *
- * The thumbnail is placed in the first column, while the rest of
- * the children are placed in the second column. */
+/* 双列布局适用于大屏幕 *
+ * 缩略图放置在第一列，其余内容放置在第二列 */
 @media (min-width: 700px) {
     .post-entry {
         grid-template-columns: 2fr 3fr;

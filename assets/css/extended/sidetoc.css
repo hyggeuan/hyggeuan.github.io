@@ -11,7 +11,7 @@
 @media (min-width: 1200px) {
     .post-single {
         grid-template-columns: minmax(0, 1fr) minmax(0, 3fr);
-        grid-column-gap: 40px; /* Set the gap between columns to 40px */
+        grid-column-gap: 40px; /* 设置列间距为40px */
     }
     .post-single .toc {
         grid-column: 1;
@@ -50,7 +50,7 @@
     padding: 0;
 }
 
-/* Adjust styles for TOC items based on hierarchy */
+/* 根据标题层级调整TOC项的缩进和字体大小 */
 .post-single .toc ul {
     list-style-type: none;
     padding-left: 0;
@@ -71,30 +71,30 @@
 }
 
 .post-single .toc h1 {
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .post-single .toc h2 {
-    font-size: 16px;
+    font-size: 14px;
     margin-left: 10px;
 }
 
 .post-single .toc h3 {
-    font-size: 14px;
+    font-size: 12px;
     margin-left: 20px;
 }
 
 .post-single .toc h4 {
-    font-size: 14px;
+    font-size: 12px;
     margin-left: 30px;
 }
 
 .post-single .toc h5 {
-    font-size: 12px;
+    font-size: 10px;
     margin-left: 40px;
 }
 
 .post-single .toc h6 {
-    font-size: 12px;
+    font-size: 10px;
     margin-left: 50px;
 }
