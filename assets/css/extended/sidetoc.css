@@ -1,10 +1,13 @@
-/* sidetoc.css */
+/* Allocate a single column when the width of the page is small. */
 .post-single {
     display: grid;
     grid-template-columns: minmax(0, 1fr);
     grid-column-gap: 20px;
 }
 
+/* Allocate two columns when there is enough width. *
+ * The ToC is placed in the first column, while the rest of
+ * the children are placed in the second column. */
 @media (min-width: 1200px) {
     .post-single {
         grid-template-columns: minmax(0, 1fr) minmax(0, 3fr); /* 目录在左侧，正文在右侧 */
@@ -12,10 +15,11 @@
     .post-single .toc {
         grid-column: 1; /* 目录在左侧 */
         position: sticky;
-        top: 10px;
-        left: 0;
+        top: var(--header-height);
         margin-right: 40px; /* 与正文内容保持40px的间距 */
         width: 220px; /* 设置目录宽度 */
+        background-color: rgba(0, 0, 0, 0.8); /* 目录背景色 */
+        padding: 10px;
     }
 }
 

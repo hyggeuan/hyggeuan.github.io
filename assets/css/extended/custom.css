@@ -31,7 +31,7 @@
 }
 
 .post-single .entry-content {
-    font-size: 18px;
+    font-size: 14px; /* Set the base font size for the main content */
 }
 
 .home-info .entry-content img {
@@ -51,11 +51,37 @@
 
 /* Center the main title and tags */
 .main-title {
-    text-align: center;
+    text-align: left; /* Left-align the main title */
+    font-size: 24px; /* Make the main title larger than the content */
 }
 
 .tags {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+/* Adjust heading sizes */
+h1 {
+    font-size: 28px; /* Main heading */
+}
+
+h2 {
+    font-size: 24px; /* Sub-heading */
+}
+
+h3 {
+    font-size: 20px; /* Third-level heading */
+}
+
+h4 {
+    font-size: 18px; /* Fourth-level heading */
+}
+
+h5 {
+    font-size: 16px; /* Fifth-level heading */
+}
+
+h6 {
+    font-size: 14px; /* Sixth-level heading */
 }
