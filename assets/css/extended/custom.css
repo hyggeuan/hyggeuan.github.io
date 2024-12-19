@@ -1,52 +1,35 @@
 /* custom.css */
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.header .logo {
-    flex-grow: 1; /* 使Logo占据左侧所有可用空间 */
-}
-
-.header .nav {
-    flex-grow: 1; /* 使导航占据右侧所有可用空间 */
-}
-
 .post-single {
-    display: grid;
-    grid-template-columns: 250px 1fr; /* 目录宽度为250px，正文占据剩余空间 */
-    gap: 20px; /* 设置目录和正文之间的间距 */
-    margin-left: 20px; /* 设置整个页面的左边距 */
-    max-width: 1200px; /* 设置最大宽度 */
-    margin: 0 auto; /* 居中对齐 */
+    display: flex;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
 }
 
 .post-single .toc {
+    width: 250px;
+    background-color: rgba(56, 54, 54, 0.8);
+    padding: 10px;
     position: sticky;
     top: var(--header-height);
-    background-color: rgba(56, 54, 54, 0.8); /* 目录背景色 */
-    padding: 10px;
-    width: 100%; /* 确保目录宽度适应其容器 */
-}
-
-.post-single .toc #TableOfContents {
-    overflow-y: auto; /* 启用垂直滚动 */
-    max-height: 70vh; /* 设置最大高度 */
+    overflow-y: auto;
+    max-height: calc(100vh - var(--header-height));
 }
 
 .post-single .entry-content {
-    font-size: 14px; /* 设置正文字体大小 */
+    flex-grow: 1;
+    margin-left: 30px; /* 设置目录和正文之间的间距 */
 }
 
 .main-title {
-    text-align: left; /* 标题左对齐 */
-    font-size: 28px; /* 设置标题字体大小 */
-    margin-top: 0; /* 移除顶部外边距 */
-    margin-bottom: 20px; /* 设置底部外边距 */
-    white-space: nowrap; /* 防止标题换行 */
-    overflow: hidden; /* 隐藏溢出内容 */
-    text-overflow: ellipsis; /* 显示省略号 */
+    text-align: left;
+    font-size: 28px;
+    margin-top: 0;
+    margin-bottom: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .tags {
@@ -57,25 +40,25 @@
 
 /* Adjust heading sizes */
 h1 {
-    font-size: 28px; /* 主标题 */
+    font-size: 28px; /* Main heading */
 }
 
 h2 {
-    font-size: 24px; /* 子标题 */
+    font-size: 24px; /* Sub-heading */
 }
 
 h3 {
-    font-size: 20px; /* 第三级标题 */
+    font-size: 20px; /* Third-level heading */
 }
 
 h4 {
-    font-size: 18px; /* 第四级标题 */
+    font-size: 18px; /* Fourth-level heading */
 }
 
 h5 {
-    font-size: 16px; /* 第五级标题 */
+    font-size: 16px; /* Fifth-level heading */
 }
 
 h6 {
-    font-size: 14px; /* 第六级标题 */
+    font-size: 14px; /* Sixth-level heading */
 }
