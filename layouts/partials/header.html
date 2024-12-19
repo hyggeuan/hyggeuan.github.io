@@ -1,83 +1,69 @@
-{{- /* theme-toggle is enabled */}}
-{{- if (not site.Params.disableThemeToggle) }}
-{{- /* theme is light */}}
-{{- if (eq site.Params.defaultTheme "light") }}
-<script>
-    if (localStorage.getItem("pref-theme") === "dark") {
-        document.body.classList.add('dark');
-    }
-</script>
-{{- /* theme is dark */}}
-{{- else if (eq site.Params.defaultTheme "dark") }}
-<script>
-    if (localStorage.getItem("pref-theme") === "light") {
-        document.body.classList.remove('dark')
-    }
-</script>
-{{- else }}
-{{- /* theme is auto */}}
-<script>
-    if (localStorage.getItem("pref-theme") === "dark") {
-        document.body.classList.add('dark');
-    } else if (localStorage.getItem("pref-theme") === "light") {
-        document.body.classList.remove('dark')
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.body.classList.add('dark');
-    }
-</script>
-{{- end }}
-{{- /* theme-toggle is disabled and theme is auto */}}
-{{- else if (and (ne site.Params.defaultTheme "light") (ne site.Params.defaultTheme "dark"))}}
-<script>
-    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.body.classList.add('dark');
-    }
-</script>
-{{- end }}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hugo Theme Toggle Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .dark {
+            background-color: #333;
+            color: #fff;
+        }
+        header {
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #ccc;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        nav ul li {
+            margin-left: 1rem;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: inherit;
+        }
+        .logo-switches button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+        .logo-switches svg {
+            margin-left: 0.5rem;
+            width: 24px;
+            height: 24px;
+        }
+    </style>
+</head>
+<body>
 
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            {{- $label_text := (site.Params.label.text | default site.Title) }}
-            {{- if site.Title }}
-            <a href="{{ "" | absLangURL }}" accesskey="h" title="{{ $label_text }} (Alt + H)">
-                {{- if site.Params.label.icon }}
-                {{- $img := resources.Get site.Params.label.icon }}
-                {{- if $img }}
-                    {{- $processableFormats := (slice "jpg" "jpeg" "png" "tif" "bmp" "gif") -}}
-                    {{- if hugo.IsExtended -}}
-                        {{- $processableFormats = $processableFormats | append "webp" -}}
-                    {{- end -}}
-                    {{- $prod := (hugo.IsProduction | or (eq site.Params.env "production")) }}
-                    {{- if and (in $processableFormats $img.MediaType.SubType) (eq $prod true)}}
-                        {{- if site.Params.label.iconHeight }}
-                            {{- $img = $img.Resize (printf "x%d" site.Params.label.iconHeight) }}
-                        {{ else }}
-                            {{- $img = $img.Resize "x30" }}
-                        {{- end }}
-                    {{- end }}
-                    <img src="{{ $img.Permalink }}" alt="" aria-label="logo"
-                        height="{{- site.Params.label.iconHeight | default "30" -}}">
-                {{- else }}
-                <img src="{{- site.Params.label.icon | absURL -}}" alt="" aria-label="logo"
-                    height="{{- site.Params.label.iconHeight | default "30" -}}">
-                {{- end -}}
-                {{- else if hasPrefix site.Params.label.iconSVG "<svg" }}
-                    {{ site.Params.label.iconSVG | safeHTML }}
-                {{- end -}}
-                {{- $label_text -}}
+            <a href="/" accesskey="h" title="Example Site (Alt + H)">
+                Example Site
             </a>
-            {{- end }}
             <div class="logo-switches">
-                {{- if (not site.Params.disableThemeToggle) }}
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)" class="theme-toggle-button">
-                    <span id="theme-toggle-text" class="theme-toggle-text">默认文本</span> <!-- 动态文本 -->
-                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                    <span id="theme-toggle-text" class="theme-toggle-text">Default Text</span> <!-- Dynamic text -->
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round">
                         <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                     </svg>
-                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round">
                         <circle cx="12" cy="12" r="5"></circle>
@@ -91,96 +77,62 @@
                         <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
                     </svg>
                 </button>
-                {{- end }}
-
-                {{- $lang := .Lang}}
-                {{- $separator := or $label_text (not site.Params.disableThemeToggle)}}
-                {{- with site.Home.Translations }}
-                <ul class="lang-switch">
-                    {{- if $separator }}<li>|</li>{{ end }}
-                    {{- range . -}}
-                    {{- if ne $lang .Lang }}
-                    <li>
-                        <a href="{{- .Permalink -}}" title="{{ .Language.Params.languageAltTitle | default (.Language.LanguageName | emojify) | default (.Lang | title) }}"
-                            aria-label="{{ .Language.LanguageName | default (.Lang | title) }}">
-                            {{- if (and site.Params.displayFullLangName (.Language.LanguageName)) }}
-                            {{- .Language.LanguageName | emojify -}}
-                            {{- else }}
-                            {{- .Lang | title -}}
-                            {{- end -}}
-                        </a>
-                    </li>
-                    {{- end -}}
-                    {{- end}}
-                </ul>
-                {{- end }}
             </div>
         </div>
-        {{- $currentPage := . }}
         <ul id="menu">
-            {{- range site.Menus.main }}
-            {{- $menu_item_url := (cond (strings.HasSuffix .URL "/") .URL (printf "%s/" .URL) ) | absLangURL }}
-            {{- $page_url:= $currentPage.Permalink | absLangURL }}
-            {{- $is_search := eq (site.GetPage .KeyName).Layout `search` }}
-            <li>
-                <a href="{{ .URL | absLangURL }}" title="{{ .Title | default .Name }} {{- cond $is_search (" (Alt + /)" | safeHTMLAttr) ("" | safeHTMLAttr ) }}"
-                {{- cond $is_search (" accesskey=/" | safeHTMLAttr) ("" | safeHTMLAttr ) }}>
-                    <span {{- if eq $menu_item_url $page_url }} class="active" {{- end }}>
-                        {{- .Pre }}
-                        {{- .Name -}}
-                        {{ .Post -}}
-                    </span>
-                    {{- if (findRE "://" .URL) }}&nbsp;
-                    <svg fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round"
-                        stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12">
-                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
-                        <path d="M15 3h6v6"></path>
-                        <path d="M10 14L21 3"></path>
-                    </svg>
-                    {{- end }}
-                </a>
-            </li>
-            {{- end }}
+            <li><a href="#" title="Home"><span>Home</span></a></li>
+            <li><a href="#" title="About"><span>About</span></a></li>
+            <li><a href="#" title="Contact"><span>Contact</span></a></li>
         </ul>
     </nav>
 </header>
 
-<!-- 在 header.html 的底部添加 JavaScript 和 CSS 代码 -->
-<style>
-  .theme-toggle-text {
-    font-size: 0.875em; /* 字体稍微小一点 */
-    margin-left: 5px;   /* 与图标之间留一点间距 */
-  }
-</style>
 <script>
-  function getCurrentTheme() {
-    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-  }
+    document.addEventListener("DOMContentLoaded", function() {
+        const themeToggle = document.getElementById('theme-toggle');
+        const moonIcon = document.getElementById('moon');
+        const sunIcon = document.getElementById('sun');
 
-  function updateNavText() {
-    const navText = document.getElementById('theme-toggle-text'); // 获取导航栏中的文本元素
-    const theme = getCurrentTheme();
-    if (theme === 'dark') {
-      navText.textContent = '帮我关一下灯';
-    } else {
-      navText.textContent = '帮我开一下灯';
-    }
-  }
+        const toggleTheme = () => {
+            if (document.body.classList.contains('dark')) {
+                document.body.classList.remove('dark');
+                localStorage.setItem("pref-theme", "light");
+                themeToggleText.textContent = 'Dark Mode';
+                moonIcon.style.display = 'inline';
+                sunIcon.style.display = 'none';
+            } else {
+                document.body.classList.add('dark');
+                localStorage.setItem("pref-theme", "dark");
+                themeToggleText.textContent = 'Light Mode';
+                moonIcon.style.display = 'none';
+                sunIcon.style.display = 'inline';
+            }
+        };
 
-  // 确保页面加载完成后执行
-  window.onload = updateNavText;
+        // Initial setup based on local storage or system preference
+        if (localStorage.getItem("pref-theme") === "dark") {
+            document.body.classList.add('dark');
+            themeToggleText.textContent = 'Light Mode';
+            moonIcon.style.display = 'none';
+            sunIcon.style.display = 'inline';
+        } else if (localStorage.getItem("pref-theme") === "light") {
+            document.body.classList.remove('dark');
+            themeToggleText.textContent = 'Dark Mode';
+            moonIcon.style.display = 'inline';
+            sunIcon.style.display = 'none';
+        } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.body.classList.add('dark');
+            themeToggleText.textContent = 'Light Mode';
+            moonIcon.style.display = 'none';
+            sunIcon.style.display = 'inline';
+        }
 
-  // 如果有主题切换事件，可以在这里添加监听器
-  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', updateNavText);
-
-  // 如果有主题切换按钮，点击时也更新文本
-  document.getElementById('theme-toggle').addEventListener('click', function() {
-    const currentTheme = localStorage.getItem("pref-theme");
-    if (currentTheme === "dark") {
-      localStorage.setItem("pref-theme", "light");
-    } else {
-      localStorage.setItem("pref-theme", "dark");
-    }
-    updateNavText(); // 更新导航栏文本
-  });
+        themeToggle.addEventListener('click', toggleTheme);
+    });
 </script>
+
+</body>
+</html>
+
+
+
