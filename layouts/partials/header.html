@@ -70,8 +70,8 @@
             {{- end }}
             <div class="logo-switches">
                 {{- if (not site.Params.disableThemeToggle) }}
-                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
-                    <span id="theme-toggle-text">默认文本</span> <!-- 添加唯一ID -->
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" class="theme-toggle-button">
+                    <span id="theme-toggle-text" class="theme-toggle-text">默认文本</span> <!-- 动态文本 -->
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round">
@@ -145,7 +145,13 @@
     </nav>
 </header>
 
-<!-- 在 header.html 的底部添加 JavaScript 代码 -->
+<!-- 在 header.html 的底部添加 JavaScript 和 CSS 代码 -->
+<style>
+  .theme-toggle-text {
+    font-size: 0.875em; /* 字体稍微小一点 */
+    margin-left: 5px;   /* 与图标之间留一点间距 */
+  }
+</style>
 <script>
   function getCurrentTheme() {
     return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
