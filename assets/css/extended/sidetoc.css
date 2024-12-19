@@ -1,0 +1,77 @@
+/* Allocate a single column when the width of the page is small. */
+.post-single {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    grid-column-gap: 20px;
+}
+
+/* Allocate two columns when there is enough width. *
+ * The ToC is placed in the first column, while the rest of
+ * the children are placed in the second column. */
+@media (min-width: 1200px) {
+    .post-single {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 3fr); /* 目录在左侧，正文在右侧 */
+    }
+    .post-single .toc {
+        grid-column: 1; /* 目录在左侧 */
+        position: sticky;
+        top: 10px;
+        left: 0;
+        margin-right: 40px; /* 与正文内容保持40px的间距 */
+        width: 220px; /* 设置目录宽度 */
+    }
+}
+
+/* Adjust the font sizes and indentation for the ToC */
+.post-single .toc #TableOfContents {
+    overflow-y: auto;
+    overflow-x: auto;
+    padding-left: 10px; /* 添加适当的左内边距 */
+    max-height: 70vh;
+}
+
+.post-single .toc .inner {
+    margin: 5px;
+    padding: 0;
+}
+
+/* Adjust the font sizes for the ToC links based on their level */
+.post-single .toc ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.post-single .toc li {
+    margin-bottom: 5px;
+}
+
+/* Set different font sizes for each heading level */
+.post-single .toc li a {
+    text-decoration: none;
+}
+
+.post-single .toc li a:link, .post-single .toc li a:visited {
+    color: inherit;
+}
+
+.post-single .toc li a {
+    font-size: 16px; /* Default font size for top level */
+    display: block;
+    margin-left: 0;
+}
+
+/* Indentation for sub-levels */
+.post-single .toc li ul li a {
+    font-size: 14px;
+    margin-left: 15px; /* Indent slightly for sub-level */
+}
+
+.post-single .toc li ul li ul li a {
+    font-size: 12px;
+    margin-left: 25px; /* Indent slightly more for deeper levels */
+}
+
+/* Optional: Add a hover effect for better accessibility */
+.post-single .toc li a:hover {
+    color: #007bff; /* Change to a color when hovering */
+}

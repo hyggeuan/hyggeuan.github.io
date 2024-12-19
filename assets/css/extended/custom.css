@@ -1,0 +1,33 @@
+/* Increase the width of the page and ensure the ToC is properly spaced */
+.main {
+    max-width: calc(var(--main-width) + var(--gap) * 30);
+}
+
+/* Adjust the layout to leave space for the ToC */
+.post-entry {
+    max-width: calc(var(--main-width) + var(--gap) * 10);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 40px; /* Ensure there's padding to create space for the left-side ToC */
+}
+
+.post-single .entry-content {
+    font-size: 18px;
+}
+
+/* Ensure the images do not overlap the ToC */
+.home-info .entry-content img {
+    width: 100%;
+    max-width: fit-content;
+    border-radius: 2%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+}
+
+/* Adjust the image layout in the single post */
+.post-single .entry-cover {
+    max-width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}

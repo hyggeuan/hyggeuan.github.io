@@ -1,0 +1,32 @@
+/* Ensure that the post-entry layout adapts to smaller screens */
+.post-entry {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 5px 0px;
+}
+
+/* When the screen width is larger, use two columns */
+@media (min-width: 700px) {
+    .post-entry {
+        grid-template-columns: 2fr 3fr;
+        grid-gap: 0px 10px;
+    }
+}
+
+.post-entry .entry-cover {
+    max-width: fit-content;
+    margin: auto;
+    grid-row: span 3;
+}
+
+.post-entry .entry-header {
+    align-self: center;
+}
+
+.post-entry .entry-content {
+    align-self: center;
+}
+
+.post-entry .entry-footer {
+    align-self: end;
+}
