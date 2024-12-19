@@ -106,3 +106,38 @@
         </ul>
     </nav>
 </header>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const themeToggle = document.getElementById('theme-toggle');
+        const logoText = document.querySelector('.logo a');
+
+        function updateLogoText() {
+            if (document.body.classList.contains('dark')) {
+                logoText.textContent = '帮我开一下灯';
+            } else {
+                logoText.textContent = '帮我关一下灯';
+            }
+        }
+
+        themeToggle.addEventListener('click', function() {
+            document.body.classList.toggle('dark');
+            updateLogoText();
+        });
+
+        // Initial check on page load
+        updateLogoText();
+
+        // Check for local storage preference
+        if (localStorage.getItem("pref-theme") === "dark") {
+            document.body.classList.add('dark');
+            updateLogoText();
+        } else if (localStorage.getItem("pref-theme") === "light") {
+            document.body.classList.remove('dark');
+            updateLogoText();
+        } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.body.classList.add('dark');
+            updateLogoText();
+        }
+    });
+</script>
