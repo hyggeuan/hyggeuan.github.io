@@ -3,7 +3,7 @@
         <div class="logo">
             {{- $label_text := (site.Params.label.text | default site.Title) }}
             {{- if site.Title }}
-            <a href="{{ "" | absLangURL }}" accesskey="h" title="{{ $label_text }} (Alt + H)">
+            <a href="{{ "" | absLangURL }}" accesskey="h" title="{{ $label_text }} (Alt + H)" id="logo-text">
                 {{- if site.Params.label.icon }}
                 {{- $img := resources.Get site.Params.label.icon }}
                 {{- if $img }}
@@ -110,31 +110,28 @@
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         const themeToggle = document.getElementById('theme-toggle');
-        const logoText = document.querySelector('.logo a');
+        const logoText = document.getElementById('logo-text');
 
-        themeToggle.addEventListener('click', function() {
-            document.body.classList.toggle('dark');
+        // Function to update logo text based on theme
+        function updateLogoText() {
             if (document.body.classList.contains('dark')) {
                 logoText.textContent = '帮我开下灯';
             } else {
                 logoText.textContent = '帮我关下灯';
             }
-            localStorage.setItem("pref-theme", document.body.classList.contains('dark') ? 'dark' : 'light');
+        }
+
+        // Add event listener to theme toggle button
+        themeToggle.addEventListener('click', function() {
+            document.body.classList.toggle('dark');
+            updateLogoText();
         });
 
-        // Initialize theme based on user preference or system preference
-        if (localStorage.getItem("pref-theme") === "dark") {
-            document.body.classList.add('dark');
-            logoText.textContent = '帮我开下灯';
-        } else if (localStorage.getItem("pref-theme") === "light") {
-            document.body.classList.remove('dark');
-            logoText.textContent = '帮我关下灯';
-        } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            document.body.classList.add('dark');
-            logoText.textContent = '帮我开下灯';
+        // Initialize theme and logo text on page load
+        if (document.body.classList.contains('dark')) {
+            updateLogoText();
         } else {
-            document.body.classList.remove('dark');
-            logoText.textContent = '帮我关下灯';
+            updateLogoText();
         }
     });
 </script>
