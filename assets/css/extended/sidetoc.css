@@ -18,7 +18,7 @@
         top: var(--header-height);
         margin-right: 40px; /* 与正文内容保持40px的间距 */
         width: 220px; /* 设置目录宽度 */
-        background-color: rgba(0, 0, 0, 0.8); /* 目录背景色 */
+        background-color: rgba(56, 54, 54, 0.8); /* 目录背景色 */
         padding: 10px;
     }
 }
