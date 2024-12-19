@@ -1,4 +1,4 @@
-/* Ensure that the post-entry layout adapts to smaller screens */
+/* thumbnail.css */
 .post-entry {
     display: grid;
     grid-template-columns: 1fr;

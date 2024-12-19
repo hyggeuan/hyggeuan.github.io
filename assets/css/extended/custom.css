@@ -1,9 +1,28 @@
-/* Increase the width of the page and ensure the ToC is properly spaced */
-.main {
-    max-width: calc(var(--main-width) + var(--gap) * 30);
+/* custom.css */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-/* Adjust the layout to leave space for the ToC */
+.header .logo {
+    flex-grow: 1; /* This will make the logo take up all available space on the left */
+}
+
+.header .nav {
+    flex-grow: 1; /* This will make the nav take up all available space on the right */
+}
+
+#toc {
+    position: sticky;
+    top: var(--header-height);
+    height: calc(100vh - var(--header-height));
+    overflow-y: auto; /* Enable vertical scrolling if content overflows */
+    width: 250px; /* Adjust width as needed */
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.8); /* Background color for the ToC */
+}
+
 .post-entry {
     max-width: calc(var(--main-width) + var(--gap) * 10);
     margin-left: auto;
@@ -15,7 +34,6 @@
     font-size: 18px;
 }
 
-/* Ensure the images do not overlap the ToC */
 .home-info .entry-content img {
     width: 100%;
     max-width: fit-content;
@@ -25,9 +43,19 @@
     margin-bottom: 10px;
 }
 
-/* Adjust the image layout in the single post */
 .post-single .entry-cover {
     max-width: fit-content;
     margin-left: auto;
     margin-right: auto;
+}
+
+/* Center the main title and tags */
+.main-title {
+    text-align: center;
+}
+
+.tags {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
