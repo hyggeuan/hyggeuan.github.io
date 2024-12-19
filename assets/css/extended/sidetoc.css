@@ -1,26 +1,18 @@
-/* Allocate a single column when the width of the page is small. */
+/* sidetoc.css */
 .post-single {
     display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    grid-column-gap: 20px;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 3fr); /* 目录在左侧，正文在右侧 */
 }
 
-/* Allocate two columns when there is enough width. *
- * The ToC is placed in the first column, while the rest of
- * the children are placed in the second column. */
-@media (min-width: 1200px) {
-    .post-single {
-        grid-template-columns: minmax(0, 1fr) minmax(0, 3fr); /* 目录在左侧，正文在右侧 */
-    }
-    .post-single .toc {
-        grid-column: 1; /* 目录在左侧 */
-        position: sticky;
-        top: var(--header-height);
-        margin-right: 40px; /* 与正文内容保持40px的间距 */
-        width: 220px; /* 设置目录宽度 */
-        background-color: rgba(56, 54, 54, 0.8); /* 目录背景色 */
-        padding: 10px;
-    }
+.post-single .toc {
+    grid-column: 1; /* 目录在左侧 */
+    position: sticky;
+    top: var(--header-height);
+    margin-right: 20px; /* 与正文内容保持20px的间距 */
+    width: 200px; /* 设置目录宽度 */
+    background-color: rgba(56, 54, 54, 0.8); /* 目录背景色 */
+    padding: 10px;
+    margin-left: 20px; /* 设置左侧边距 */
 }
 
 .post-single .toc #TableOfContents {

@@ -20,7 +20,8 @@
     overflow-y: auto; /* Enable vertical scrolling if content overflows */
     width: 250px; /* Adjust width as needed */
     padding: 10px;
-    background-color: rgba(0, 0, 0, 0.8); /* Background color for the ToC */
+    background-color: rgba(56, 54, 54, 0.8); /* Background color for the ToC */
+    margin-left: 20px; /* Set the left margin to create space between the edge and the ToC */
 }
 
 .post-entry {
