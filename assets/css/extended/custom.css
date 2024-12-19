@@ -1,24 +1,27 @@
-/* custom.css */
-/* 主界面的布局 */
+/* Increase the default width of the page. */
 .main {
     max-width: calc(var(--main-width) + var(--gap) * 30);
-    margin-left: auto;
-    margin-right: auto;
 }
-
-/* 增加首页的宽度 */
+/* Increase less for the home page.
+This will eventually replace the following two rules. But for now
+the browser support for :has is not widespread yet.
 .main:has(.first-entry) {
     max-width: calc(var(--main-width) + var(--gap) * 10);
 }
-
-/* 增加详情页面的宽度 */
+*/
 .post-entry {
     max-width: calc(var(--main-width) + var(--gap) * 10);
     margin-left: auto;
     margin-right: auto;
 }
+.first-entry {
+    max-width: calc(var(--main-width) + var(--gap) * 10);
+    margin-left: auto;
+    margin-right: auto;
+}
 
-/* 增加首页信息中图片的宽度 */
+
+/* Increase the width of images placed in home info. */
 .home-info .entry-content img {
     width: 100%;
     max-width: fit-content;
@@ -28,12 +31,12 @@
     margin-bottom: 10px;
 }
 
-/* 增加摘要文本的字体大小 */
+/* Increase the font of summary text. */
 .post-entry .entry-content {
     font-size: 18px;
 }
 
-/* 设置帖子图片的宽度限制并居中对齐 */
+/* Set a limit on the width of post images and align them center. */
 .post-single .entry-cover {
     max-width: fit-content;
     margin-left: auto;
@@ -47,98 +50,7 @@
   text-align: center;
 }
 
-/* 详情页面的布局 */
-.post-single {
-    display: grid;
-    grid-template-columns: 250px 1fr; /* 目录宽度为250px，正文占据剩余空间 */
-    gap: 40px; /* 设置目录和正文之间的间距 */
-    margin-left: 20px; /* 设置整个页面的左边距 */
-    max-width: 1200px; /* 设置最大宽度 */
-    margin: 0 auto; /* 居中对齐 */
-}
-
-.post-single .toc {
-    position: sticky;
-    top: var(--header-height);
-    background-color: rgba(56, 54, 54, 0.8); /* 目录背景色 */
-    padding: 10px;
-    width: 250px; /* 固定目录宽度 */
-}
-
-.post-single .toc #TableOfContents {
-    overflow-y: auto; /* 启用垂直滚动 */
-    max-height: 70vh; /* 设置最大高度 */
-}
-
-.post-single .toc ul {
-    list-style: none;
-    padding-left: 0;
-}
-
-.post-single .toc li {
-    margin-bottom: 5px;
-}
-
-.post-single .toc li a {
-    text-decoration: none;
-    color: inherit;
-    font-size: 16px; /* 默认字体大小 */
-    display: block;
-}
-
-.post-single .toc li ul li a {
-    font-size: 14px;
-    margin-left: 10px; /* 子级缩进 */
-}
-
-.post-single .toc li ul li ul li a {
-    font-size: 12px;
-    margin-left: 20px; /* 次子级缩进 */
-}
-
-.post-single .toc li a:hover {
-    color: #007bff; /* 悬停时的颜色变化 */
-}
-
-/* 详情页面的title和正文部分对齐 */
-.main-title {
-    text-align: left; /* 标题左对齐 */
-    font-size: 28px; /* 设置标题字体大小 */
-    margin-top: 0; /* 移除顶部外边距 */
-    margin-bottom: 20px; /* 设置底部外边距 */
-    white-space: nowrap; /* 防止标题换行 */
-    overflow: hidden; /* 隐藏溢出内容 */
-    text-overflow: ellipsis; /* 显示省略号 */
-}
-
-/* tags小方块居中显示 */
-.tags {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Adjust heading sizes */
-h1 {
-    font-size: 28px; /* 主标题 */
-}
-
-h2 {
-    font-size: 24px; /* 子标题 */
-}
-
-h3 {
-    font-size: 20px; /* 第三级标题 */
-}
-
-h4 {
-    font-size: 18px; /* 第四级标题 */
-}
-
-h5 {
-    font-size: 16px; /* 第五级标题 */
-}
-
-h6 {
-    font-size: 14px; /* 第六级标题 */
+/* Center pageref and tags on the main page */
+.pageref, .tags {
+    text-align: center;
 }

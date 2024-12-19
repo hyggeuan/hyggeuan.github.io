@@ -1,12 +1,13 @@
-/* thumbnail.css */
-/* 详情页面的布局 */
+/* Allocate a single column when the width of the page is small. */
 .post-entry {
     display: grid;
     grid-template-columns: 1fr;
     grid-gap: 5px 0px;
 }
 
-/* 当屏幕宽度大于700px时，使用两列布局 */
+/* Allocate two columns when there is enough width. *
+ * The thumbnail is placed in the first column, while the rest of
+ * the children are placed in the second column. */
 @media (min-width: 700px) {
     .post-entry {
         grid-template-columns: 2fr 3fr;
