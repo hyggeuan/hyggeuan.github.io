@@ -53,6 +53,9 @@
 .main-title {
     text-align: left; /* Left-align the main title */
     font-size: 24px; /* Make the main title larger than the content */
+    white-space: nowrap; /* Prevent the title from wrapping */
+    overflow: hidden; /* Hide any overflow */
+    text-overflow: ellipsis; /* Show an ellipsis if the title is too long */
 }
 
 .tags {
