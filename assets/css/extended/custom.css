@@ -1,10 +1,10 @@
-/* Increase the default width of the page. */
+/* 增加页面默认宽度 */
 .main {
     max-width: calc(var(--main-width) + var(--gap) * 30);
 }
-/* Increase less for the home page.
-This will eventually replace the following two rules. But for now
-the browser support for :has is not widespread yet.
+/* 对首页增加较少的宽度。
+这最终将替换以下两个规则。但由于目前浏览器对 :has 的支持不够广泛，
+暂时保留这两个规则。
 .main:has(.first-entry) {
     max-width: calc(var(--main-width) + var(--gap) * 10);
 }
@@ -20,8 +20,7 @@ the browser support for :has is not widespread yet.
     margin-right: auto;
 }
 
-
-/* Increase the width of images placed in home info. */
+/* 增加首页信息中的图片宽度 */
 .home-info .entry-content img {
     width: 100%;
     max-width: fit-content;
@@ -31,12 +30,12 @@ the browser support for :has is not widespread yet.
     margin-bottom: 10px;
 }
 
-/* Increase the font of summary text. */
+/* 增加摘要文本的字体大小 */
 .post-entry .entry-content {
     font-size: 18px;
 }
 
-/* Set a limit on the width of post images and align them center. */
+/* 限制帖子图片的宽度并居中对齐 */
 .post-single .entry-cover {
     max-width: fit-content;
     margin-left: auto;
@@ -47,10 +46,40 @@ the browser support for :has is not widespread yet.
     margin: auto;
 }
 .post-content figcaption {
-  text-align: center;
+    text-align: center;
 }
 
-/* Center pageref and tags on the main page */
+/* 确保主界面的 pageref 和 tags 居中显示 */
 .pageref, .tags {
     text-align: center;
+}
+
+/* 根据层级调整正文标题的字体大小 */
+.post-single .post-content h1 {
+    font-size: 24px;
+}
+
+.post-single .post-content h2 {
+    font-size: 20px;
+}
+
+.post-single .post-content h3 {
+    font-size: 18px;
+}
+
+.post-single .post-content h4 {
+    font-size: 16px;
+}
+
+.post-single .post-content h5 {
+    font-size: 14px;
+}
+
+.post-single .post-content h6 {
+    font-size: 14px;
+}
+
+/* 设置正文的字体大小 */
+.post-single .post-content p {
+    font-size: 14px;
 }
