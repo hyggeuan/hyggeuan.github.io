@@ -96,10 +96,17 @@
     background-color: #524f4f;
 }
 
-/* 全局正文文字颜色设置 */
+/* 全局变量 */
+:root {
+    --border: #d0d7de; /* light 模式的边框颜色 */
+    --dark-border: #57606a; /* dark 模式的边框颜色 */
+    --radius: 4px; /* 圆角半径 */
+}
+
+/* 默认正文文字颜色设置 */
 .post-content {
     color: #16162f; /* 默认白天模式字体颜色 */
-    transition: color 0.3s ease; /* 平滑过渡效果 */
+    transition: color 0.3s ease, background 0.3s ease; /* 平滑过渡效果 */
 }
 
 /* 白天模式下的行内代码样式 */
@@ -110,6 +117,7 @@
     line-height: 1.5;
     background: #adc4e1; /* 白天行内代码背景色 */
     border-radius: 2px;
+    transition: background 0.3s ease, color 0.3s ease; /* 平滑过渡效果 */
 }
 
 /* 白天模式下的代码块样式 */
@@ -122,11 +130,12 @@
     border-radius: var(--radius);
     overflow-x: auto;
     word-break: break-all;
+    transition: background 0.3s ease, color 0.3s ease; /* 平滑过渡效果 */
 }
 
 /* 夜间模式正文文字颜色设置 */
 .post-content.dark {
-    color: #c4c4c5; /* 夜间模式字体颜色 */
+    color: #c4c4c5 !important; /* 夜间模式字体颜色 */
 }
 
 /* 夜间模式下的行内代码样式 */
@@ -135,7 +144,7 @@
     padding: 4px 6px;
     font-size: .78em;
     line-height: 1.5;
-    background: #3c3c3c; /* 夜间行内代码背景色 */
+    background: #3c3c3c !important; /* 夜间行内代码背景色 */
     border-radius: 2px;
 }
 
@@ -144,8 +153,8 @@
     display: grid;
     margin: auto 0;
     padding: 10px;
-    color: #d5d5d6; /* 夜间代码块字体颜色 */
-    background: #1e1e1e; /* 夜间代码块背景色 */
+    color: #d5d5d6 !important; /* 夜间代码块字体颜色 */
+    background: #1e1e1e !important; /* 夜间代码块背景色 */
     border-radius: var(--radius);
     overflow-x: auto;
     word-break: break-all;
@@ -158,10 +167,11 @@
     padding: .4em;
     border: 1px solid var(--border);
     background: #e4e8f1; /* 默认 TOC 背景色 */
+    transition: background 0.3s ease, border-color 0.3s ease; /* 平滑过渡效果 */
 }
 
 /* 夜间模式下的 TOC 样式 */
 .toc.dark {
-    border: 1px solid #3a3a3a;
-    background: #2a2a2a; /* 夜间 TOC 背景色 */
+    border: 1px solid var(--dark-border) !important;
+    background: #2a2a2a !important; /* 夜间 TOC 背景色 */
 }
