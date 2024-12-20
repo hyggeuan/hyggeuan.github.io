@@ -12,9 +12,7 @@
 }
 
 /* 针对分类、标签、搜索页面的特殊样式 */
-.categories .main,
-.tags .main,
-.search .main {
+.main:not(.home-info)  {
     padding-left: 200px; /* 设置更大的左侧内边距 */
     padding-right: 200px; /* 设置更大的右侧内边距 */
     padding-top: 20px; /* 保持顶部内边距为20px */
