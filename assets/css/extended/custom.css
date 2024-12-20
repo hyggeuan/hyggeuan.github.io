@@ -3,14 +3,7 @@
     max-width: calc(var(--main-width) + var(--gap) * 30);
     margin-left: auto; /* 居中对齐 */
     margin-right: auto; /* 居中对齐 */
-    padding: 20px; /* 默认内边距 */
-}
-
-/* 针对分类、标签、搜索页面等非首页和非详情页的特殊样式 */
-.main:not(.home-info):not(.post-single) {
-    padding-left: 300px; /* 设置更大的左侧内边距 */
-    padding-right: 300px; /* 设置更大的右侧内边距 */
-    padding-top: 20px; /* 保持顶部内边距为20px */
+    padding: 20px; /* 默认内边距，适用于所有页面 */
 }
 
 /* 对首页增加较少的宽度。
@@ -96,19 +89,16 @@
 }
 
 /* 确保分类、标签、搜索等页面的内容居中显示 */
-.categories, .search, .archive {
-    max-width: 800px; /* 设置最大宽度 */
-    margin-left: auto; /* 居中对齐 */
-    margin-right: auto; /* 居中对齐 */
-    padding: 20px; 
+.categories, .search, .archive, .tags {
+    padding-left: 200px; /* 设置更大的左侧内边距 */
+    padding-right: 200px; /* 设置更大的右侧内边距 */
 }
 
 /* 确保分类、标签、搜索等页面的内部内容居中 */
-.categories .content, .search .content, .archive .content {
-    max-width: 800px; /* 设置最大宽度 */
-    margin-left: auto; /* 居中对齐 */
-    margin-right: auto; /* 居中对齐 */
-    padding: 20px
+.categories .content, .search .content, .archive .content, .tags .content {
+    padding-left: 200px; /* 设置更大的左侧内边距 */
+    padding-right: 200px; /* 设置更大的右侧内边距 */
+    padding-top: 20px; /* 保持顶部内边距为20px */
 }
 
 /* 标题居中 */
