@@ -72,6 +72,7 @@ params:
 
 #.首页的文章上方的一些信息
   homeInfoParams:
+    Avatar: "static\POKEMON.png"
     Title: "PaperMod's Demo"
     Content: >
       👋 Welcome to demo page of Hugo's theme PaperMod!

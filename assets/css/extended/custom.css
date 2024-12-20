@@ -3,12 +3,21 @@
     max-width: calc(var(--main-width) + var(--gap) * 30);
     margin-left: auto; /* 居中对齐 */
     margin-right: auto; /* 居中对齐 */
-    padding: 20px; /* 默认内边距 */
+    padding: 20px; /* 默认内边距，适用于所有页面 */
+}
+
+/* 针对首页的特殊样式 */
+.home-info .main {
+    padding: 20px; /* 设置首页的内边距 */
 }
 
 /* 针对分类、标签、搜索页面的特殊样式 */
-.main:not(.home-page) {
-    padding: 150px; /* 设置更大的内边距 */
+.categories .main,
+.tags .main,
+.search .main {
+    padding-left: 200px; /* 设置更大的左侧内边距 */
+    padding-right: 200px; /* 设置更大的右侧内边距 */
+    padding-top: 20px; /* 保持顶部内边距为20px */
 }
 
 /* 对首页增加较少的宽度。
