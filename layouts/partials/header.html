@@ -34,7 +34,7 @@
             {{- end }}
             <div class="logo-switches">
                 {{- if (not site.Params.disableThemeToggle) }}
-                <button id="theme-toggle" accesskey="t" title="(Alt + T)" onclick="updateTitleText()">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" onclick="toggleTheme()">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round">
@@ -54,28 +54,6 @@
                         <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
                     </svg>
                 </button>
-                {{- end }}
-
-                {{- $lang := .Lang}}
-                {{- $separator := or $label_text (not site.Params.disableThemeToggle)}}
-                {{- with site.Home.Translations }}
-                <ul class="lang-switch">
-                    {{- if $separator }}<li>|</li>{{ end }}
-                    {{- range . -}}
-                    {{- if ne $lang .Lang }}
-                    <li>
-                        <a href="{{- .Permalink -}}" title="{{ .Language.Params.languageAltTitle | default (.Language.LanguageName | emojify) | default (.Lang | title) }}"
-                            aria-label="{{ .Language.LanguageName | default (.Lang | title) }}">
-                            {{- if (and site.Params.displayFullLangName (.Language.LanguageName)) }}
-                            {{- .Language.LanguageName | emojify -}}
-                            {{- else }}
-                            {{- .Lang | title -}}
-                            {{- end -}}
-                        </a>
-                    </li>
-                    {{- end -}}
-                    {{- end}}
-                </ul>
                 {{- end }}
             </div>
         </div>
@@ -108,27 +86,33 @@
     </nav>
 </header>
 
-<!-- 在这里添加JavaScript逻辑 -->
+<!-- JavaScript逻辑部分 -->
 <script>
-    // 定义一个函数来更新站点标题文本
-    function updateTitleText() {
-        const isDarkMode = document.body.classList.contains('dark');
+    // 切换主题的函数
+    function toggleTheme() {
+        const body = document.body;
+        const isDarkMode = body.classList.contains('dark');
+        
+        // 切换 'dark' 类
+        body.classList.toggle('dark', !isDarkMode);
+        
+        // 更新标题文本
         const siteTitleElement = document.getElementById('dynamic-site-title');
-        if (isDarkMode) {
-            siteTitleElement.textContent = "帮我关下灯";
+        siteTitleElement.textContent = isDarkMode ? "帮我开下灯" : "帮我关下灯";
+        
+        // 将主题状态保存到 localStorage
+        localStorage.setItem('theme', isDarkMode ? 'light' : 'dark');
+    }
+
+    // 页面加载时检查并应用保存的主题设置
+    window.addEventListener('load', function() {
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            document.body.classList.add('dark');
+            document.getElementById('dynamic-site-title').textContent = "帮我开下灯";
         } else {
-            siteTitleElement.textContent = "帮我开下灯";
+            document.body.classList.remove('dark');
+            document.getElementById('dynamic-site-title').textContent = "帮我关下灯";
         }
-    }
-
-    // 在文档加载时检查当前模式并设置正确的文本
-    window.addEventListener('load', function () {
-        updateTitleText();
     });
-
-    // 如果存在主题切换事件，也需要更新文本
-    const themeToggle = document.getElementById('theme-toggle');
-    if (themeToggle) {
-        themeToggle.addEventListener('click', updateTitleText);
-    }
 </script>
