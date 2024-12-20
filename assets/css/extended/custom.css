@@ -8,8 +8,8 @@
 
 /* 针对分类、标签、搜索页面等非首页和非详情页的特殊样式 */
 .main:not(.home-page):not(.post-single) {
-    padding-left: 600px; /* 设置更大的左侧内边距 */
-    padding-right: 600px; /* 设置更大的右侧内边距 */
+    padding-left: 300px; /* 设置更大的左侧内边距 */
+    padding-right: 300px; /* 设置更大的右侧内边距 */
     padding-top: 20px; /* 保持顶部内边距为20px */
 }
 
