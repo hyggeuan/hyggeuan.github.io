@@ -13,7 +13,7 @@ tags = ["mysql", "powerbi", "userbehaviour"]
 [淘宝用户购物行为数据集](https://tianchi.aliyun.com/dataset/649)
 
 #### 1.2 结构
-static/favicon.png
+![alt text](favicon.png)
 ![alt text](image-1.png)
 
 ### 2. 导入数据库
