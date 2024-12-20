@@ -96,9 +96,18 @@
     background-color: #524f4f;
 }
 
+/* 全局变量 */
+:root {
+    --border: #d0d7de; /* light 模式的边框颜色 */
+    --dark-border: #57606a; /* dark 模式的边框颜色 */
+    --radius: 4px; /* 圆角半径 */
+    --code-bg: #3a3a40; /* dark 模式下行内代码的背景色 */
+    --code-block-bg: #2a2a30; /* dark 模式下代码块的背景色 */
+}
+
 /* 调整详情页正文字体颜色 */
 .post-content {
-    transition: color 0.3s ease; /* 平滑过渡效果 */
+    transition: color 0.3s ease, background 0.3s ease; /* 平滑过渡效果 */
 }
 
 /* light 模式下的 .post-content 样式 */
@@ -116,6 +125,45 @@
         border-radius: 2px;
         transition: background 0.3s ease, color 0.3s ease; /* 平滑过渡效果 */
     }
+
+    .post-content pre code {
+        display: grid;
+        margin: auto 0;
+        padding: 10px;
+        color: #333; /* 白天代码块的文字颜色 */
+        background: #e0e0e8 !important;
+        border-radius: var(--radius);
+        overflow-x: auto;
+        word-break: break-all;
+    }
+}
+
+/* dark 模式下的 .post-content 样式 */
+@media (prefers-color-scheme: dark) {
+    .post-content {
+        color: #c4c4c5; /* 夜间正文文字颜色 */
+    }
+
+    .post-content code {
+        margin: auto 4px;
+        padding: 4px 6px;
+        font-size: .78em;
+        line-height: 1.5;
+        background: var(--code-bg); /* 夜间行内代码背景色 */
+        border-radius: 2px;
+        transition: background 0.3s ease, color 0.3s ease; /* 平滑过渡效果 */
+    }
+
+    .post-content pre code {
+        display: grid;
+        margin: auto 0;
+        padding: 10px;
+        color: #d5d5d6; /* 夜间代码块的文字颜色 */
+        background: var(--code-block-bg) !important; /* 夜间代码块背景色 */
+        border-radius: var(--radius);
+        overflow-x: auto;
+        word-break: break-all;
+    }
 }
 
 /* 默认样式（可选，根据需要定义） */
@@ -131,5 +179,13 @@
     .toc {
         border: 1px solid var(--border);
         background: #e4e8f1;
+    }
+}
+
+/* dark 模式下的 .toc 样式 */
+@media (prefers-color-scheme: dark) {
+    .toc {
+        border: 1px solid var(--dark-border);
+        background: #2a2a30; /* 或者其他适合 dark 模式的背景色 */
     }
 }
