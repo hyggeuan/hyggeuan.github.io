@@ -7,11 +7,11 @@
 }
 
 /* 详情页面的特殊样式 */
-.post-page.main {
-    max-width: calc(var(--main-width) + var(--gap) * 30); /* 详情页面的较大宽度 */
-    margin-left: auto; /* 居中对齐 */
-    margin-right: auto; /* 居中对齐 */
-    padding: 20px; /* 默认内边距 */
+.main.post-page {
+    max-width: calc(var(--main-width) + var(--gap) * 30) !important; /* 详情页面的较大宽度 */
+    margin-left: auto !important; /* 居中对齐 */
+    margin-right: auto !important; /* 居中对齐 */
+    padding: 20px !important; /* 默认内边距 */
 }
 
 /* 增加首页信息中的图片宽度 */
