@@ -96,20 +96,9 @@
     background-color: #524f4f;
 }
 
-/* 全局变量 */
-:root {
-    --border: #d0d7de; /* light 模式的边框颜色 */
-    --dark-border: #57606a; /* dark 模式的边框颜色 */
-    --radius: 4px; /* 圆角半径 */
-    --code-bg-light: #adc4e1; /* light 模式下行内代码的背景色 */
-    --code-bg-dark: #3a3a40; /* dark 模式下行内代码的背景色 */
-    --code-block-bg-light: #e0e0e8; /* light 模式下代码块的背景色 */
-    --code-block-bg-dark: #d5d5d6; /* dark 模式下代码块的背景色 */
-}
-
 /* 调整详情页正文字体颜色 */
 .post-content {
-    transition: color 0.3s ease, background 0.3s ease; /* 平滑过渡效果 */
+    transition: color 0.3s ease; /* 平滑过渡效果 */
 }
 
 /* light 模式下的 .post-content 样式 */
@@ -118,22 +107,24 @@
         color: #16162f;
     }
 
+    /* light 模式下的行内代码样式 */
     .post-content code {
         margin: auto 4px;
         padding: 4px 6px;
         font-size: .78em;
         line-height: 1.5;
-        background: var(--code-bg-light);
+        background: #adc4e1;
         border-radius: 2px;
         transition: background 0.3s ease, color 0.3s ease; /* 平滑过渡效果 */
     }
 
+    /* light 模式下的代码块样式 */
     .post-content pre code {
         display: grid;
         margin: auto 0;
         padding: 10px;
-        color: #333; /* 白天代码块的文字颜色 */
-        background: var(--code-block-bg-light) !important;
+        color: #d5d5d6;
+        background: #e0e0e8 !important;
         border-radius: var(--radius);
         overflow-x: auto;
         word-break: break-all;
@@ -146,22 +137,23 @@
         color: #c4c4c5; /* 夜间正文文字颜色 */
     }
 
+    /* dark 模式下的行内代码样式 */
     .post-content code {
         margin: auto 4px;
         padding: 4px 6px;
         font-size: .78em;
         line-height: 1.5;
-        background: var(--code-bg-dark); /* 夜间行内代码背景色 */
+        background: var(--code-bg);
         border-radius: 2px;
-        transition: background 0.3s ease, color 0.3s ease; /* 平滑过渡效果 */
     }
 
+    /* dark 模式下的代码块样式 */
     .post-content pre code {
         display: grid;
         margin: auto 0;
         padding: 10px;
-        color: #d5d5d6; /* 夜间代码块的文字颜色 */
-        background: var(--code-block-bg-dark) !important; /* 夜间代码块背景色 */
+        color: #d5d5d6;
+        background: var(--code-block-bg) !important;
         border-radius: var(--radius);
         overflow-x: auto;
         word-break: break-all;
@@ -181,13 +173,5 @@
     .toc {
         border: 1px solid var(--border);
         background: #e4e8f1;
-    }
-}
-
-/* dark 模式下的 .toc 样式 */
-@media (prefers-color-scheme: dark) {
-    .toc {
-        border: 1px solid var(--dark-border);
-        background: #2a2a30; /* 或者其他适合 dark 模式的背景色 */
     }
 }
