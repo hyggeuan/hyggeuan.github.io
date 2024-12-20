@@ -1,36 +1,9 @@
 /* 增加页面默认宽度 */
-.main {
-    max-width: calc(var(--main-width) + var(--gap) * 30);
+.main, .post-entry, .first-entry {
+    max-width: calc(var(--main-width) + var(--gap) * 10);
     margin-left: auto; /* 居中对齐 */
     margin-right: auto; /* 居中对齐 */
-    padding: 20px; /* 默认内边距，适用于所有页面 */
-}
-
-/* 针对分类、标签、搜索页面的特殊样式 */
-.categories .main .main,
-.tags .main .main,
-.search .main .main{
-    padding-left: 300px; /* 设置更大的左侧内边距 */
-    padding-right: 300px; /* 设置更大的右侧内边距 */
-    padding-top: 20px; /* 保持顶部内边距为20px */
-}
-
-/* 对首页增加较少的宽度。
-这最终将替换以下两个规则。但由于目前浏览器对 :has 的支持不够广泛，
-暂时保留这两个规则。
-.main:has(.first-entry) {
-    max-width: calc(var(--main-width) + var(--gap) * 10);
-}
-*/
-.post-entry {
-    max-width: calc(var(--main-width) + var(--gap) * 10);
-    margin-left: auto;
-    margin-right: auto;
-}
-.first-entry {
-    max-width: calc(var(--main-width) + var(--gap) * 10);
-    margin-left: auto;
-    margin-right: auto;
+    padding: 20px; /* 默认内边距 */
 }
 
 /* 增加首页信息中的图片宽度 */
@@ -55,6 +28,7 @@
     margin-right: auto;
 }
 
+/* 统一调整正文图片和图注 */
 .post-content img {
     margin: auto;
 }
@@ -68,46 +42,24 @@
 }
 
 /* 根据层级调整正文标题的字体大小 */
-.post-single .post-content h1 {
-    font-size: 24px;
-}
-
-.post-single .post-content h2 {
-    font-size: 20px;
-}
-
-.post-single .post-content h3 {
-    font-size: 18px;
-}
-
-.post-single .post-content h4 {
-    font-size: 16px;
-}
-
-.post-single .post-content h5 {
-    font-size: 14px;
-}
-
-.post-single .post-content h6 {
-    font-size: 14px;
-}
+.post-single .post-content h1 { font-size: 24px; }
+.post-single .post-content h2 { font-size: 20px; }
+.post-single .post-content h3 { font-size: 18px; }
+.post-single .post-content h4 { font-size: 16px; }
+.post-single .post-content h5 { font-size: 14px; }
+.post-single .post-content h6 { font-size: 14px; }
 
 /* 设置正文的字体大小 */
 .post-single .post-content p {
     font-size: 14px;
 }
 
-/* 确保分类、标签、搜索等页面的内容居中显示 */
-.categories, .search, .archive, .tags {
-    padding-left: 200px; /* 设置更大的左侧内边距 */
-    padding-right: 200px; /* 设置更大的右侧内边距 */
-}
-
-/* 确保分类、标签、搜索等页面的内部内容居中 */
+/* 分类、标签、搜索等页面内容居中显示 */
+.categories, .search, .archive, .tags,
 .categories .content, .search .content, .archive .content, .tags .content {
-    padding-left: 200px; /* 设置更大的左侧内边距 */
-    padding-right: 200px; /* 设置更大的右侧内边距 */
-    padding-top: 20px; /* 保持顶部内边距为20px */
+    padding-left: 300px;
+    padding-right: 300px;
+    padding-top: 20px;
 }
 
 /* 标题居中 */
@@ -120,7 +72,7 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 10px; /* 调整标签之间的间距 */
+    gap: 10px;
 }
 
 /* 标签小方块样式 */
