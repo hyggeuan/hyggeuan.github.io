@@ -44,11 +44,6 @@
     text-align: center;
 }
 
-/* 调整详情页正文字体颜色*/
-.post-content {
-    color: #16162f;
-}
-
 /* 确保主界面的 pageref 和 tags 居中显示 */
 .pageref, .tags {
     text-align: center;
@@ -99,4 +94,42 @@
 
 .tag-item:hover {
     background-color: #524f4f;
+}
+
+/* 调整详情页正文字体颜色 */
+.post-content {
+    transition: color 0.3s ease; /* 平滑过渡效果 */
+}
+
+/* light 模式下的 .post-content 样式 */
+@media (prefers-color-scheme: light) {
+    .post-content {
+        color: #16162f;
+    }
+
+    .post-content code {
+        margin: auto 4px;
+        padding: 4px 6px;
+        font-size: .78em;
+        line-height: 1.5;
+        background: #adc4e1;
+        border-radius: 2px;
+        transition: background 0.3s ease, color 0.3s ease; /* 平滑过渡效果 */
+    }
+}
+
+/* 默认样式（可选，根据需要定义） */
+.toc {
+    margin: 0 2px 40px;
+    border-radius: var(--radius);
+    padding: .4em;
+    transition: background 0.3s ease, border-color 0.3s ease; /* 平滑过渡效果 */
+}
+
+/* light 模式下的 .toc 样式 */
+@media (prefers-color-scheme: light) {
+    .toc {
+        border: 1px solid var(--border);
+        background: #e4e8f1;
+    }
 }
