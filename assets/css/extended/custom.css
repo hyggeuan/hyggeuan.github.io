@@ -3,12 +3,11 @@
     max-width: calc(var(--main-width) + var(--gap) * 30);
     margin-left: auto; /* 居中对齐 */
     margin-right: auto; /* 居中对齐 */
-    padding: 20px; /* 添加一些内边距以便更好地查看内容 */
+    padding: 20px; /* 默认内边距 */
 }
 
 /* 针对分类、标签、搜索页面的特殊样式 */
-.taxonomy .main,
-.page.search .main {
+.main:not(.home-page) {
     padding: 150px; /* 设置更大的内边距 */
 }
 
