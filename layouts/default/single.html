@@ -8,18 +8,18 @@
         </svg>
     </h1>
     {{- if .Description }}
-    <div class="post-description">
+    <div class="posts-description">
         {{ .Description }}
     </div>
     {{- end }}
     {{- if not (.Param "hideMeta") }}
-    <div class="post-meta">
+    <div class="posts-meta">
         {{- partial "translation_list.html" . -}}
     </div>
     {{- end }}
 </header>
 
-<div class="main {{ if eq .Kind "post" }}post-page{{ end }}">
+<div class="main {{ if eq .Kind "posts" }}post-page{{ end }}">
     <!-- 帖子内容 -->
     <div id="searchbox">
         <input id="searchInput" autofocus placeholder="{{ .Params.placeholder | default (printf "%s ↵" .Title) }}"
