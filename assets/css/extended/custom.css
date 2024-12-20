@@ -44,6 +44,11 @@
     text-align: center;
 }
 
+/* 调整详情页正文字体颜色*/
+.post-content {
+    color: #16162f;
+}
+
 /* 确保主界面的 pageref 和 tags 居中显示 */
 .pageref, .tags {
     text-align: center;
