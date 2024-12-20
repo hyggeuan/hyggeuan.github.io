@@ -111,7 +111,7 @@
     color: #fff; /* 悬停时的文字颜色 */
 }
 
-/* 大的小方块样式 */
+/* 大的小方块样式 - 白天模式 */
 .terms-tags a {
     display: block;
     padding: 3px 10px;
@@ -122,19 +122,19 @@
     text-decoration: none;
 }
 
-/* 大的小方块悬停样式 */
+/* 大的小方块悬停样式 - 白天模式 */
 .terms-tags a:hover {
     transform: scale(1.05); /* 悬停时稍微放大 */
 }
 
-/* 夜间模式下的大标签样式 */
+/* 大的小方块样式 - 夜间模式 */
 .terms-tags a.dark {
-    background-color: var(--entry); /* 夜间模式下稍深的背景色 */
-    color: var(--content); /* 夜间模式下标签文字颜色 */
+    background-color: rgb(56, 56, 61); /* 直接指定夜间模式下的背景色 */
+    color: #fff; /* 直接指定夜间模式下的文字颜色 */
 }
 
-/* 夜间模式下的大标签悬停样式 */
+/* 大的小方块悬停样式 - 夜间模式 */
 .terms-tags a.dark:hover {
-    background-color: var(--secondary); /* 悬停时的背景色 */
-    color: var(--primary); /* 悬停时的文字颜色 */
+    background-color: rgb(70, 70, 75); /* 直接指定悬停时的背景色 */
+    color: #fff; /* 直接指定悬停时的文字颜色 */
 }
