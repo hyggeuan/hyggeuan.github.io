@@ -51,10 +51,10 @@
 
 /* 根据层级调整正文标题的字体大小 */
 .post-single .post-content h1 { font-size: 24px; }
-.post-single .post-content h2 { font-size: 20px; }
-.post-single .post-content h3 { font-size: 18px; }
-.post-single .post-content h4 { font-size: 16px; }
-.post-single .post-content h5 { font-size: 14px; }
+.post-single .post-content h2 { font-size: 22px; }
+.post-single .post-content h3 { font-size: 20px; }
+.post-single .post-content h4 { font-size: 18px; }
+.post-single .post-content h5 { font-size: 16px; }
 .post-single .post-content h6 { font-size: 14px; }
 
 /* 设置正文的字体大小 */
