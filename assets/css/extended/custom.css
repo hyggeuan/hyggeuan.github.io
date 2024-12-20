@@ -98,7 +98,7 @@
 .post-content blockquote {
     margin: 20px 0;
     padding: 0 14px;
-    border-inline-start: 3px solid #061f3a; /* 主题色边框 */
+    border-inline-start: 3px solid #747576; /* 主题色边框 */
     color: #666; /* 比正文稍浅的字体颜色 */
     font-style: italic; /* 可选：使引文斜体显示 */
     background-color: rgba(0, 0, 0, 0.05); /* 可选：添加轻微的背景色，提升可读性 */
