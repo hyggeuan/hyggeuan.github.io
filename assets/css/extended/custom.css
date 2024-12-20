@@ -6,7 +6,7 @@
     padding: 20px; /* 默认内边距 */
 }
 
-.post-content, .post-entry, .post-single, .first-entry {
+.post-content, .home-info{
     max-width: calc(var(--main-width) + var(--gap) * 30);
     margin-left: auto; /* 居中对齐 */
     margin-right: auto; /* 居中对齐 */
