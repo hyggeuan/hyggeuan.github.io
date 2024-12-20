@@ -7,11 +7,11 @@
 }
 
 /* 针对分类、标签、搜索页面的特殊样式 */
-.categories .main,
-.tags .main,
-.search .main,
-.archive .main,
-.about .main {
+.categories,
+.tags,
+.search,
+.archive,
+.about {
     padding-left: 600px; /* 设置更大的左侧内边距 */
     padding-right: 600px; /* 设置更大的右侧内边距 */
     padding-top: 20px; /* 保持顶部内边距为20px */
