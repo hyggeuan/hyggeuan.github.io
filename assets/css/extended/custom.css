@@ -6,6 +6,14 @@
     padding: 20px; /* 默认内边距 */
 }
 
+/* 帖子页面主体部分 */
+.main.post-page {
+    max-width: calc(var(--main-width) + var(--gap) * 30);
+    margin-left: auto; /* 居中对齐 */
+    margin-right: auto; /* 居中对齐 */
+    padding: 20px; /* 默认内边距 */
+}
+
 /* 增加首页信息中的图片宽度 */
 .home-info .entry-content img {
     width: 100%;
