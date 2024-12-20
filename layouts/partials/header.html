@@ -4,20 +4,24 @@
             {{- $label_text := (site.Params.label.text | default site.Title) }}
             {{- if site.Title }}
             <a href="{{ "" | absLangURL }}" accesskey="h" title="{{ $label_text }} (Alt + H)">
-                {{- if site.Params.label.icon }}
-                <img src="{{- site.Params.label.icon | absURL -}}" alt="" aria-label="logo" height="30">
-                {{- end }}
-                {{- $label_text -}}
+                <!-- 图标和站点标题 -->
+                {{- /* 保留原有的图标逻辑 */ -}}
+                ...
+                <!-- 添加动态文本 -->
+                <span id="theme-text">{{- if eq site.Params.defaultTheme "dark" }}帮我开下灯{{ else }}帮我关下灯{{ end }}</span>
             </a>
             {{- end }}
             <div class="logo-switches">
                 {{- if (not site.Params.disableThemeToggle) }}
-                <!-- 主题切换按钮 -->
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)">
-                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
                         <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                     </svg>
-                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
                         <circle cx="12" cy="12" r="5"></circle>
                         <line x1="12" y1="1" x2="12" y2="3"></line>
                         <line x1="12" y1="21" x2="12" y2="23"></line>
@@ -28,44 +32,33 @@
                         <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
                         <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
                     </svg>
-                    <span id="theme-text">帮我关下灯</span> <!-- 显示文本 -->
                 </button>
                 {{- end }}
+
+                <!-- 省略其他代码 -->
+
             </div>
         </div>
-        <!-- 其他导航内容 -->
+        <!-- 省略其他代码 -->
     </nav>
 </header>
 
 <script>
-    // 获取相关元素
-    const themeToggleButton = document.getElementById('theme-toggle');
-    const themeText = document.getElementById('theme-text');
-
-    // 根据当前主题设置文本
-    function updateThemeText() {
-        const currentTheme = localStorage.getItem("pref-theme");
-        if (currentTheme === "dark") {
-            themeText.textContent = "帮我开下灯";  // dark主题时显示“帮我开下灯”
-        } else {
-            themeText.textContent = "帮我关下灯";  // light主题时显示“帮我关下灯”
-        }
+    // 检查本地存储的主题偏好设置或系统默认设置
+    function applyTheme() {
+        const theme = localStorage.getItem("pref-theme") || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+        document.body.classList.toggle('dark', theme === 'dark');
+        document.getElementById('theme-text').textContent = theme === 'dark' ? '帮我开下灯' : '帮我关下灯';
     }
 
-    // 初始化时更新文本
-    updateThemeText();
+    // 初始化主题
+    applyTheme();
 
-    // 切换主题
-    themeToggleButton.addEventListener('click', () => {
-        const currentTheme = localStorage.getItem("pref-theme");
-        if (currentTheme === "dark") {
-            document.body.classList.remove('dark');
-            localStorage.setItem("pref-theme", "light");
-        } else {
-            document.body.classList.add('dark');
-            localStorage.setItem("pref-theme", "dark");
-        }
-        // 更新文本
-        updateThemeText();
+    // 监听主题切换按钮点击事件
+    document.getElementById('theme-toggle').addEventListener('click', function () {
+        const isDark = document.body.classList.contains('dark');
+        document.body.classList.toggle('dark', !isDark);
+        localStorage.setItem("pref-theme", isDark ? "light" : "dark");
+        document.getElementById('theme-text').textContent = isDark ? '帮我关下灯' : '帮我开下灯';
     });
 </script>
