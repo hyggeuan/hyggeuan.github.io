@@ -33,4 +33,4 @@
 - 跟随教程给详情页定义了class类名，但是上传到网页后，html的审查元素中并没有显示我定义的类名，所以目前有几个界面是左侧顶格状态。
 
 ## 网页首页截图
-![](static/首页截图.png)
+[截图](https://github.com/chihiro-000/chihiro-000.github.io/blob/612b72d30509ea1b847aa59491bd0d3d55435ec5/static/%E9%A6%96%E9%A1%B5%E6%88%AA%E5%9B%BE.png)
