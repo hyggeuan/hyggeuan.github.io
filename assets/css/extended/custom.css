@@ -83,30 +83,30 @@
     gap: 10px;
 }
 
-/* 白天模式下的标签小方块样式 */
+/* 标签小方块样式 */
 .tag-item {
-    background-color: #f0f0f0; /* 白天背景色 */
+    background-color: #e0e8ff; /* 更浅的白天模式下标签背景色 */
+    color: #333; /* 白天模式下标签文字颜色 */
     padding: 5px 10px;
     border-radius: 5px;
-    color: #333; /* 白天文字颜色 */
     text-decoration: none;
     transition: background-color 0.3s ease, color 0.3s ease; /* 平滑过渡效果 */
 }
 
-/* 白天模式下的标签小方块悬停样式 */
+/* 标签小方块悬停样式 */
 .tag-item:hover {
-    background-color: #524f4f; /* 白天悬停背景色 */
-    color: #fff; /* 白天悬停文字颜色 */
+    background-color: #c7d6ff; /* 悬停时的背景色 */
+    color: #333; /* 悬停时的文字颜色 */
 }
 
 /* 夜间模式下的标签小方块样式 */
-.dark .tag-item {
-    background-color: rgb(46, 46, 51); /* 夜间背景色 */
-    color: rgb(218, 218, 219); /* 夜间文字颜色 */
+.tag-item.dark {
+    background-color: rgb(46, 46, 51); /* 夜间模式下标签背景色 */
+    color: #fff; /* 夜间模式下标签文字颜色 */
 }
 
 /* 夜间模式下的标签小方块悬停样式 */
-.dark .tag-item:hover {
-    background-color: rgb(65, 66, 68); /* 夜间悬停背景色 */
-    color: rgb(255, 255, 255); /* 夜间悬停文字颜色 */
+.tag-item.dark:hover {
+    background-color: rgb(60, 60, 65); /* 悬停时的背景色 */
+    color: #fff; /* 悬停时的文字颜色 */
 }
