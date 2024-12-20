@@ -112,29 +112,29 @@
 }
 
 /* 大的小方块样式 */
-.terms-tags {
-    background-color: #dfe8ff; /* 白天模式下更浅的背景色 */
-    color: #333; /* 白天模式下标签文字颜色 */
-    padding: 10px 20px;
-    border-radius: 8px;
+.terms-tags a {
+    display: block;
+    padding: 3px 10px;
+    background: rgb(195, 201, 213); /* 白天模式下的背景色 */
+    border-radius: 6px;
+    transition: transform 0.1s; /* 平滑过渡效果 */
+    color: #333; /* 白天模式下的文字颜色 */
     text-decoration: none;
-    transition: background-color 0.3s ease, color 0.3s ease; /* 平滑过渡效果 */
 }
 
 /* 大的小方块悬停样式 */
-.terms-tags:hover {
-    background-color: #c7d6ff; /* 悬停时的背景色 */
-    color: #333; /* 悬停时的文字颜色 */
+.terms-tags a:hover {
+    transform: scale(1.05); /* 悬停时稍微放大 */
 }
 
 /* 夜间模式下的大标签样式 */
-.terms-tags.dark {
-    background-color: rgb(56, 56, 61); /* 夜间模式下稍深的背景色 */
-    color: #fff; /* 夜间模式下标签文字颜色 */
+.terms-tags a.dark {
+    background-color: var(--entry); /* 夜间模式下稍深的背景色 */
+    color: var(--content); /* 夜间模式下标签文字颜色 */
 }
 
 /* 夜间模式下的大标签悬停样式 */
-.terms-tags.dark:hover {
-    background-color: rgb(70, 70, 75); /* 悬停时的背景色 */
-    color: #fff; /* 悬停时的文字颜色 */
+.terms-tags a.dark:hover {
+    background-color: var(--secondary); /* 悬停时的背景色 */
+    color: var(--primary); /* 悬停时的文字颜色 */
 }
