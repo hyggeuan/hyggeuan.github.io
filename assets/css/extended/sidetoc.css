@@ -17,6 +17,7 @@
         grid-column: 1;
         position: sticky;
         top: 10px;
+        overflow: visible; /* 确保内容可以超出容器 */
     }
 }
 
@@ -43,6 +44,8 @@
     overflow-x: auto;
     padding-left: 20px;
     max-height: 70vh;
+    margin-left: -20px; /* 负的左侧边距 */
+    max-width: calc(100% + 40px); /* 确保滚动条不会被隐藏 */
 }
 
 .post-single .toc .inner {
