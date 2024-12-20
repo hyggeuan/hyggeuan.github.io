@@ -11,7 +11,7 @@
 }
 
 /* 针对 .main 的特殊宽度 */
-.main {
+.main.search-page {
     max-width: calc(var(--main-width) + var(--gap));
 }
 
