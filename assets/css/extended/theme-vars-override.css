@@ -142,7 +142,7 @@
 
 /* 标签小方块样式 */
 .tag-item {
-    background-color: #bbccf5; /* 白天模式下标签背景色 */
+    background-color: #e0e8ff; /* 更浅的白天模式下标签背景色 */
     color: #333; /* 白天模式下标签文字颜色 */
     padding: 5px 10px;
     border-radius: 5px;
@@ -152,8 +152,8 @@
 
 /* 标签小方块悬停样式 */
 .tag-item:hover {
-    background-color: #a0b8e0; /* 白天模式下悬停背景色 */
-    color: #fff; /* 白天模式下悬停文字颜色 */
+    background-color: #c7d6ff; /* 悬停时的背景色 */
+    color: #333; /* 悬停时的文字颜色 */
 }
 
 /* 夜间模式下的标签小方块样式 */
@@ -164,6 +164,6 @@
 
 /* 夜间模式下的标签小方块悬停样式 */
 .tag-item.dark:hover {
-    background-color: rgb(60, 60, 65); /* 夜间模式下悬停背景色 */
-    color: #fff; /* 夜间模式下悬停文字颜色 */
+    background-color: rgb(60, 60, 65); /* 悬停时的背景色 */
+    color: #fff; /* 悬停时的文字颜色 */
 }
