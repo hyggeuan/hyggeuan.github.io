@@ -1,16 +1,31 @@
-/* 增加页面默认宽度 */
-.main {
-    max-width: calc(var(--main-width) + var(--gap) );
-    margin-left: auto; /* 居中对齐 */
-    margin-right: auto; /* 居中对齐 */
+/* 公共样式：所有页面的默认宽度和居中对齐 */
+.common-container {
+    max-width: calc(var(--main-width) + var(--gap));
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* 增加页面默认宽度和内边距 */
+.main, .post-content, .home-info {
     padding: 20px; /* 默认内边距 */
 }
 
-.post-content, .home-info{
+/* 针对 .main 的特殊宽度 */
+.main {
+    max-width: calc(var(--main-width) + var(--gap));
+}
+
+/* 针对 .post-content 和 .home-info 的特殊宽度 */
+.post-content, .home-info {
     max-width: calc(var(--main-width) + var(--gap) * 30);
-    margin-left: auto; /* 居中对齐 */
-    margin-right: auto; /* 居中对齐 */
-    padding: 20px; /* 默认内边距 */
+}
+
+/* 针对非首页和非详情页的特殊样式 */
+.main:not(.home-page):not(.post-single) {
+    padding-left: 200px; /* 设置更大的左侧内边距 */
+    padding-right: 200px; /* 设置更大的右侧内边距 */
+    padding-top: 20px; /* 保持顶部内边距为20px */
+    padding-bottom: 20px; /* 保持底部内边距为20px */
 }
 
 /* 增加首页信息中的图片宽度 */
