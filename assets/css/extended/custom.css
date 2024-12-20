@@ -6,6 +6,15 @@
     padding: 20px; /* 默认内边距，适用于所有页面 */
 }
 
+/* 针对分类、标签、搜索页面的特殊样式 */
+.categories .main,
+.tags .main,
+.search .main {
+    padding-left: 300px; /* 设置更大的左侧内边距 */
+    padding-right: 300px; /* 设置更大的右侧内边距 */
+    padding-top: 20px; /* 保持顶部内边距为20px */
+}
+
 /* 对首页增加较少的宽度。
 这最终将替换以下两个规则。但由于目前浏览器对 :has 的支持不够广泛，
 暂时保留这两个规则。
