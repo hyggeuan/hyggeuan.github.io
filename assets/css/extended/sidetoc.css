@@ -10,7 +10,7 @@
  * the children are placed in the second column. */
 @media (min-width: 1200px) {
     .post-single {
-        grid-template-columns: minmax(0, 0fr) minmax(0, 3fr);
+        grid-template-columns: minmax(0, 1fr) minmax(0, 3fr);
         grid-column-gap: 40px; /* 设置列间距为40px */
     }
     .post-single .toc {
