@@ -73,7 +73,7 @@ params:
 #.首页的文章上方的一些信息
   homeInfoParams:
     Title: "WOW Hey ！ 🤗"
-    Content: |1
+    Content: |2
       👋 欢迎偶然到来的你
 
       🧑‍🚀 这里会发布一些我用公开数据集制作的分析报告或BI可视化看板
