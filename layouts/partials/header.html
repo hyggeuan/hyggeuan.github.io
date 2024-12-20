@@ -1,200 +1,9 @@
-{{- /* theme-toggle is enabled */}}
-{{- if (not site.Params.disableThemeToggle) }}
-{{- /* theme is light */}}
-{{- if (eq site.Params.defaultTheme "light") }}
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const themeToggle = document.getElementById('theme-toggle');
-        const logoText = document.getElementById('logo-text');
-
-        // Function to toggle theme and update text
-        function toggleTheme() {
-            // Toggle the 'dark' class on the body element
-            document.body.classList.toggle('dark');
-
-            // Update the logo text based on the current theme
-            if (document.body.classList.contains('dark')) {
-                logoText.textContent = '帮我开下灯';
-            } else {
-                logoText.textContent = '帮我关下灯';
-            }
-
-            // Save the user's theme preference in localStorage
-            localStorage.setItem("pref-theme", document.body.classList.contains('dark') ? 'dark' : 'light');
-
-            // Debugging: Log the current theme to the console
-            console.log("Current theme:", document.body.classList.contains('dark') ? 'dark' : 'light');
-        }
-
-        // Initialize theme based on user preference or system preference
-        function initializeTheme() {
-            // Check if there is a saved preference in localStorage
-            const savedTheme = localStorage.getItem("pref-theme");
-
-            // If there is no saved preference, use the default theme
-            if (savedTheme) {
-                document.body.classList.add(savedTheme);
-            } else {
-                document.body.classList.remove('dark');
-            }
-
-            // Update the logo text based on the initial theme
-            if (document.body.classList.contains('dark')) {
-                logoText.textContent = '帮我开下灯';
-            } else {
-                logoText.textContent = '帮我关下灯';
-            }
-
-            // Debugging: Log the initial theme to the console
-            console.log("Initialized theme:", document.body.classList.contains('dark') ? 'dark' : 'light');
-        }
-
-        // Add event listener to theme toggle button
-        if (themeToggle) {
-            themeToggle.addEventListener('click', toggleTheme);
-        }
-
-        // Initialize theme on page load
-        initializeTheme();
-    });
-</script>
-{{- /* theme is dark */}}
-{{- else if (eq site.Params.defaultTheme "dark") }}
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const themeToggle = document.getElementById('theme-toggle');
-        const logoText = document.getElementById('logo-text');
-
-        // Function to toggle theme and update text
-        function toggleTheme() {
-            // Toggle the 'dark' class on the body element
-            document.body.classList.toggle('dark');
-
-            // Update the logo text based on the current theme
-            if (document.body.classList.contains('dark')) {
-                logoText.textContent = '帮我开下灯';
-            } else {
-                logoText.textContent = '帮我关下灯';
-            }
-
-            // Save the user's theme preference in localStorage
-            localStorage.setItem("pref-theme", document.body.classList.contains('dark') ? 'dark' : 'light');
-
-            // Debugging: Log the current theme to the console
-            console.log("Current theme:", document.body.classList.contains('dark') ? 'dark' : 'light');
-        }
-
-        // Initialize theme based on user preference or system preference
-        function initializeTheme() {
-            // Check if there is a saved preference in localStorage
-            const savedTheme = localStorage.getItem("pref-theme");
-
-            // If there is no saved preference, use the default theme
-            if (savedTheme) {
-                document.body.classList.add(savedTheme);
-            } else {
-                document.body.classList.add('dark');
-            }
-
-            // Update the logo text based on the initial theme
-            if (document.body.classList.contains('dark')) {
-                logoText.textContent = '帮我开下灯';
-            } else {
-                logoText.textContent = '帮我关下灯';
-            }
-
-            // Debugging: Log the initial theme to the console
-            console.log("Initialized theme:", document.body.classList.contains('dark') ? 'dark' : 'light');
-        }
-
-        // Add event listener to theme toggle button
-        if (themeToggle) {
-            themeToggle.addEventListener('click', toggleTheme);
-        }
-
-        // Initialize theme on page load
-        initializeTheme();
-    });
-</script>
-{{- /* theme is auto */}}
-{{- else }}
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const themeToggle = document.getElementById('theme-toggle');
-        const logoText = document.getElementById('logo-text');
-
-        // Function to toggle theme and update text
-        function toggleTheme() {
-            // Toggle the 'dark' class on the body element
-            document.body.classList.toggle('dark');
-
-            // Update the logo text based on the current theme
-            if (document.body.classList.contains('dark')) {
-                logoText.textContent = '帮我开下灯';
-            } else {
-                logoText.textContent = '帮我关下灯';
-            }
-
-            // Save the user's theme preference in localStorage
-            localStorage.setItem("pref-theme", document.body.classList.contains('dark') ? 'dark' : 'light');
-
-            // Debugging: Log the current theme to the console
-            console.log("Current theme:", document.body.classList.contains('dark') ? 'dark' : 'light');
-        }
-
-        // Initialize theme based on user preference or system preference
-        function initializeTheme() {
-            // Check if there is a saved preference in localStorage
-            const savedTheme = localStorage.getItem("pref-theme");
-
-            // If there is no saved preference, use the system preference
-            if (savedTheme) {
-                document.body.classList.add(savedTheme);
-            } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                document.body.classList.add('dark');
-            } else {
-                document.body.classList.remove('dark');
-            }
-
-            // Update the logo text based on the initial theme
-            if (document.body.classList.contains('dark')) {
-                logoText.textContent = '帮我开下灯';
-            } else {
-                logoText.textContent = '帮我关下灯';
-            }
-
-            // Debugging: Log the initial theme to the console
-            console.log("Initialized theme:", document.body.classList.contains('dark') ? 'dark' : 'light');
-        }
-
-        // Add event listener to theme toggle button
-        if (themeToggle) {
-            themeToggle.addEventListener('click', toggleTheme);
-        }
-
-        // Initialize theme on page load
-        initializeTheme();
-    });
-</script>
-{{- end }}
-{{- /* theme-toggle is disabled and theme is auto */}}
-{{- else if (and (ne site.Params.defaultTheme "light") (ne site.Params.defaultTheme "dark"))}}
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Initialize theme based on system preference
-        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            document.body.classList.add('dark');
-        }
-    });
-</script>
-{{- end }}
-
 <header class="header">
     <nav class="nav">
         <div class="logo">
             {{- $label_text := (site.Params.label.text | default site.Title) }}
             {{- if site.Title }}
-            <a href="{{ "" | absLangURL }}" accesskey="h" title="{{ $label_text }} (Alt + H)" id="logo-text">
+            <a href="{{ "" | absLangURL }}" accesskey="h" title="{{ $label_text }} (Alt + H)">
                 {{- if site.Params.label.icon }}
                 {{- $img := resources.Get site.Params.label.icon }}
                 {{- if $img }}
@@ -219,12 +28,13 @@
                 {{- else if hasPrefix site.Params.label.iconSVG "<svg" }}
                     {{ site.Params.label.iconSVG | safeHTML }}
                 {{- end -}}
-                {{- $label_text -}}
+                <!-- 添加了一个具有唯一ID 'dynamic-site-title' 的 span 元素 -->
+                <span id="dynamic-site-title">{{ $label_text }}</span>
             </a>
             {{- end }}
             <div class="logo-switches">
                 {{- if (not site.Params.disableThemeToggle) }}
-                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" onclick="updateTitleText()">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round">
@@ -297,3 +107,28 @@
         </ul>
     </nav>
 </header>
+
+<!-- 在这里添加JavaScript逻辑 -->
+<script>
+    // 定义一个函数来更新站点标题文本
+    function updateTitleText() {
+        const isDarkMode = document.body.classList.contains('dark');
+        const siteTitleElement = document.getElementById('dynamic-site-title');
+        if (isDarkMode) {
+            siteTitleElement.textContent = "帮我开下灯";
+        } else {
+            siteTitleElement.textContent = "帮我关下灯";
+        }
+    }
+
+    // 在文档加载时检查当前模式并设置正确的文本
+    window.addEventListener('load', function () {
+        updateTitleText();
+    });
+
+    // 如果存在主题切换事件，也需要更新文本
+    const themeToggle = document.getElementById('theme-toggle');
+    if (themeToggle) {
+        themeToggle.addEventListener('click', updateTitleText);
+    }
+</script>
