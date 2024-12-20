@@ -99,6 +99,31 @@
     font-size: 14px;
 }
 
+/* 确保分类、标签、搜索等页面的内容居中显示 */
+.categories, .search, .archive {
+    max-width: 800px; /* 设置最大宽度 */
+    margin-left: auto; /* 居中对齐 */
+    margin-right: auto; /* 居中对齐 */
+    padding-left: 600px; /* 设置更大的左侧内边距 */
+    padding-right: 600px; /* 设置更大的右侧内边距 */
+    padding-top: 20px; /* 保持顶部内边距为20px */
+}
+
+/* 确保分类、标签、搜索等页面的内部内容居中 */
+.categories .content, .search .content, .archive .content {
+    max-width: 800px; /* 设置最大宽度 */
+    margin-left: auto; /* 居中对齐 */
+    margin-right: auto; /* 居中对齐 */
+    padding-left: 600px; /* 设置更大的左侧内边距 */
+    padding-right: 600px; /* 设置更大的右侧内边距 */
+    padding-top: 20px; /* 保持顶部内边距为20px */
+}
+
+/* 标题居中 */
+.categories h1, .search h1, .archive h1 {
+    text-align: center;
+}
+
 /* 标签小方块居中 */
 .tags {
     display: flex;
