@@ -92,6 +92,15 @@
     color: #fff; /* 非关键字部分颜色为白色 */
 }
 
+/* 夜间模式下的代码高亮样式 */
+.post-content.dark pre code .chroma .k { color: #79c0ff; } /* Keyword */
+.post-content.dark pre code .chroma .kc { color: #79c0ff; } /* KeywordConstant */
+.post-content.dark pre code .chroma .kd { color: #79c0ff; } /* KeywordDeclaration */
+.post-content.dark pre code .chroma .kn { color: #79c0ff; } /* KeywordNamespace */
+.post-content.dark pre code .chroma .kp { color: #79c0ff; } /* KeywordPseudo */
+.post-content.dark pre code .chroma .kr { color: #79c0ff; } /* KeywordReserved */
+.post-content.dark pre code .chroma .kt { color: #79c0ff; } /* KeywordType */
+
 /* 默认的 TOC 样式 */
 .toc {
     margin: 0 2px 40px;
@@ -133,28 +142,28 @@
 
 /* 标签小方块样式 */
 .tag-item {
-    background-color: var(--entry); /* 使用 --entry 变量控制标签背景色 */
+    background-color: #bbccf5; /* 白天模式下标签背景色 */
+    color: #333; /* 白天模式下标签文字颜色 */
     padding: 5px 10px;
     border-radius: 5px;
-    color: var(--primary); /* 使用 --primary 变量控制标签文字颜色 */
     text-decoration: none;
     transition: background-color 0.3s ease, color 0.3s ease; /* 平滑过渡效果 */
 }
 
 /* 标签小方块悬停样式 */
 .tag-item:hover {
-    background-color: var(--secondary); /* 使用 --secondary 变量控制悬停背景色 */
-    color: var(--content); /* 使用 --content 变量控制悬停文字颜色 */
+    background-color: #a0b8e0; /* 白天模式下悬停背景色 */
+    color: #fff; /* 白天模式下悬停文字颜色 */
 }
 
 /* 夜间模式下的标签小方块样式 */
 .tag-item.dark {
-    background-color: var(--entry); /* 使用 --entry 变量控制夜间标签背景色 */
-    color: var(--content); /* 使用 --content 变量控制夜间标签文字颜色 */
+    background-color: rgb(46, 46, 51); /* 夜间模式下标签背景色 */
+    color: #fff; /* 夜间模式下标签文字颜色 */
 }
 
 /* 夜间模式下的标签小方块悬停样式 */
 .tag-item.dark:hover {
-    background-color: var(--secondary); /* 使用 --secondary 变量控制夜间悬停背景色 */
-    color: var(--primary); /* 使用 --primary 变量控制夜间悬停文字颜色 */
+    background-color: rgb(60, 60, 65); /* 夜间模式下悬停背景色 */
+    color: #fff; /* 夜间模式下悬停文字颜色 */
 }
