@@ -94,6 +94,23 @@
     line-height: 1.6; /* 增加行间距，提升可读性 */
 }
 
+/* 白天模式下的 blockquote 样式 */
+.post-content blockquote {
+    margin: 20px 0;
+    padding: 0 14px;
+    border-inline-start: 3px solid #007bff; /* 主题色边框 */
+    color: #666; /* 比正文稍浅的字体颜色 */
+    font-style: italic; /* 可选：使引文斜体显示 */
+    background-color: rgba(0, 0, 0, 0.05); /* 可选：添加轻微的背景色，提升可读性 */
+}
+
+/* 夜间模式下的 blockquote 样式 */
+.post-content blockquote.dark {
+    color: #b3b3b3; /* 夜间模式下比正文稍浅的字体颜色 */
+    border-inline-start: 3px solid #0056b3; /* 夜间模式下的主题色边框 */
+    background-color: rgba(255, 255, 255, 0.05); /* 夜间模式下的引文背景色 */
+}
+
 /* 分类、标签、搜索等页面内容居中显示 */
 .categories, .search, .archive, .tags,
 .categories .content, .search .content, .archive .content, .tags .content {
