@@ -1,5 +1,5 @@
 /* 增加页面默认宽度 */
-.main, .post-entry, .first-entry {
+.main, .first-entry {
     max-width: calc(var(--main-width) + var(--gap) * 10);
     margin-left: auto; /* 居中对齐 */
     margin-right: auto; /* 居中对齐 */
