@@ -12,9 +12,9 @@
     --secondary: rgb(108,108,108);
     --tertiary: rgb(214, 214, 214)
     --content: rgb(31,31, 31);
-    --code-block-bg: rgb(245, 245, 245);
+    --code-block-bg: rgb(87, 84, 84);
     --code-bg: rgb(245, 245, 245);
-    --border: rgb(238, 238, 238);
+    --border: rgb(90, 83, 83);
 }
 
 .dark {

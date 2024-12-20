@@ -1,25 +1,8 @@
-/* 公共样式：所有页面的默认宽度和居中对齐 */
-.common-container {
-    max-width: calc(var(--main-width) + var(--gap));
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* 增加页面默认宽度和内边距 */
-.main, .post-content, .home-info {
-    padding: 20px; /* 默认内边距 */
-}
-
-/* 针对 .main 的特殊宽度 */
-.main.search-page {
-    max-width: calc(var(--main-width) + var(--gap));
-}
-
-/* 针对非首页和非详情页的特殊样式 */
-.main:not(.home-info):not(.post-single) {
-    max-width: calc(var(--main-width) + var(--gap) * 30);
-    margin-left: auto;
-    margin-right: auto;
+/* 增加页面默认宽度 */
+.main, .post-entry, .first-entry {
+    max-width: calc(var(--main-width) + var(--gap) * 10);
+    margin-left: auto; /* 居中对齐 */
+    margin-right: auto; /* 居中对齐 */
     padding: 20px; /* 默认内边距 */
 }
 
@@ -74,8 +57,8 @@
 /* 分类、标签、搜索等页面内容居中显示 */
 .categories, .search, .archive, .tags,
 .categories .content, .search .content, .archive .content, .tags .content {
-    padding-left: 400px;
-    padding-right: 400px;
+    padding-left: 200px;
+    padding-right: 200px;
     padding-top: 20px;
 }
 
