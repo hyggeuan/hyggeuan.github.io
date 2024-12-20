@@ -7,7 +7,7 @@
 }
 
 /* 详情页面的特殊样式 */
-.main:not(.home-info) {
+.main:not(.home-info):not(.post-entry) {
     max-width: calc(var(--main-width) + var(--gap) * 30) !important; /* 详情页面的较大宽度 */
     margin-left: auto !important; /* 居中对齐 */
     margin-right: auto !important; /* 居中对齐 */
