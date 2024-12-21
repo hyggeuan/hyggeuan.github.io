@@ -15,6 +15,13 @@ tags = ["mysql", "powerbi", "userbehaviour"]
 
 #### 1.2 结构
 
+## 查看图片
+
+<!-- 嵌入图片并应用放大镜效果 -->
+<a href="{{ "static/首页截图.png" | absURL }}" data-lightbox="image-1" data-title="Click to enlarge">
+    <img src="{{ "static/首页截图.png" | absURL }}" alt="放大图片" class="magnify" data-big="{{ "static/首页截图.png" | absURL }}" style="max-width: 100%; cursor: zoom-in;">
+</a>
+
 <a href="#" data-download-href="https://i.postimg.cc/CxGzPBpj/image.png" data-lightbox="image-1" data-title="Click to enlarge">
     <img src="https://i.postimg.cc/CxGzPBpj/image.png" alt="放大图片" class="magnify" style="max-width: 100%; cursor: zoom-in;">
 </a>
