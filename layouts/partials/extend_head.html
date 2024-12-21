@@ -27,6 +27,21 @@
         $('.magnify').magnify();
     
         // 初始化 lightGallery.js
-        $('#content a[data-lightbox]').lightGallery();
+        lightGalleryjsInit();
     });
+    
+    function lightGalleryjsInit() {
+        var lightbox = document.querySelectorAll('#content a[data-lightbox]');
+        if (lightbox.length > 0) {
+            lightGalleryjs(lightbox);
+        }
+    }
+    
+    function lightGalleryjs(elements) {
+        return lightGallery.js(elements, {
+            download: false, // 如果不需要下载按钮，可以设置为 false
+            zoom: true,      // 启用缩放功能
+            thumbnail: true, // 显示缩略图
+        });
+    }
     </script>
