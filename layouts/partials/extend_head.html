@@ -1,9 +1,6 @@
 {{- /* Head custom content area start */ -}}
 {{- /*     Insert any custom code (web-analytics, resources, etc.) - it will appear in the <head></head> section of every page. */ -}}
 {{- /*     Can be overwritten by partial with the same name in the global layouts. */ -}}
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
 
 <!-- Add favicon -->
 <link rel="icon" href="{{ "/static/favicon.png" | relURL }}" type="image/png">
@@ -11,7 +8,7 @@
 {{ partial "mathjax.html" . }}
 
 {{ if or .IsHome .IsPage }}
-  <!-- jQuery -->
+  <!-- jQuery (required for magnify.js) -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
   <!-- lightGallery.js -->
@@ -26,14 +23,18 @@
   <script>
     document.addEventListener("DOMContentLoaded", function() {
         // 初始化 magnify.js
-        $('.magnify').magnify();
+        $('.magnify-image').magnify({
+            magnifier: '#result', // 指定放大镜结果容器
+            duration: 200,        // 放大动画持续时间
+            easing: 'ease-out'    // 放大动画效果
+        });
 
         // 初始化 lightGallery.js
         lightGalleryjsInit();
     });
 
     function lightGalleryjsInit() {
-        var lightbox = document.querySelectorAll('#content a[data-lightbox]');
+        var lightbox = document.querySelectorAll('.magnify-container a[data-lightbox]');
         if (lightbox.length > 0) {
             lightGallery.init(lightbox, {
                 download: false, // 如果不需要下载按钮，可以设置为 false
