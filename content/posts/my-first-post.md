@@ -17,7 +17,7 @@ tags = ["mysql", "powerbi", "userbehaviour"]
 
 ## 查看图片
 
-{{< magnify src="https://i.postimg.cc/CxGzPBpj/image.png" alt="放大图片" />}}
+{{< magnify src="https://i.postimg.cc/CxGzPBpj/image.png" alt="放大图片">}}
 
 <a href="#" data-download-href="https://i.postimg.cc/CxGzPBpj/image.png" data-lightbox="image-1" data-title="Click to enlarge">
     <img src="https://i.postimg.cc/CxGzPBpj/image.png" alt="放大图片" class="magnify" style="max-width: 100%; cursor: zoom-in;">
