@@ -14,21 +14,13 @@ tags = ["mysql", "powerbi", "userbehaviour"]
 [淘宝用户购物行为数据集](https://tianchi.aliyun.com/dataset/649)
 
 #### 1.2 结构
-
-## 查看图片
-
-
-通义千问
-<a href="#" class="zoomable" data-src="https://i.postimg.cc/CxGzPBpj/image.png">
-    <img src="https://i.postimg.cc/CxGzPBpj/image.png" alt="放大图片" style="max-width: 100%; cursor: zoom-in;">
-</a>
-
-CHATGPT
 <div class="zoomable">
     <img src="https://i.postimg.cc/CxGzPBpj/image.png" alt="放大图片">
 </div>
 
-
+<div class="zoomable">
+    <img src="https://i.postimg.cc/6QzTKk3q/image.png" alt="放大图片">
+</div>
 
 ### 2. 导入数据库
 原有数据集规模为亿级，MySQL运行过载，所以截取前1千万条记录做处理和分析
@@ -129,11 +121,14 @@ DROP TEMPORARY TABLE temp_to_delete;
 
 #### 3.5 结果预览
 一千万条数据经过去重、去除缺失、去除不在目标日期内的记录后剩余有效数据8,498,679条
-[![image.png](https://i.postimg.cc/y8y0Jrx4/image.png)](https://postimg.cc/cv6v2hfX)
-
+<div class="zoomable">
+    <img src="https://i.postimg.cc/y8y0Jrx4/image.png" alt="放大图片">
+</div>
 
 ## 二、可视化分析
-[![思维导图](https://i.postimg.cc/zDHWwfvk/image.png)](https://postimg.cc/HjHVddQJ)
+<div class="zoomable">
+    <img src="https://i.postimg.cc/zDHWwfvk/image.png" alt="放大图片">
+</div>
 
 
 ### [PowerBI在线看板：UserBehaviour](https://app.powerbi.com/view?r=eyJrIjoiOWE2MDczOTktMWI5Yy00MTZlLTkxOGYtOTQzMzdlNDA2MDliIiwidCI6ImFiZDJiNzlkLWZjZDctNDdhOC1hMWVlLTU0MDdkODM5N2Y1MSJ9)
@@ -141,8 +136,19 @@ DROP TEMPORARY TABLE temp_to_delete;
 
 ### 1. 用户流量
 #### 1.1 日活跃用户 (DAU) 和三日活跃用户 (3-DAU)
-| [![DAU](https://i.postimg.cc/FRyvmcGZ/image.png)](https://postimg.cc/N9jSkK39) | [![3-DAU](https://i.postimg.cc/pX2WW0wn/image.png)](https://postimg.cc/YjsK8xqp) |
-|------------------------------------------------------------------------------|------------------------------------------------------------------------|
+
+<div class="gallery" style="display: flex; justify-content: space-between;">
+    <div class="zoomable" style="flex: 1 1 48%; margin: 10px;">
+        <img src="https://i.postimg.cc/FRyvmcGZ/image.png" alt="放大图片">
+    </div>
+    <div class="zoomable" style="flex: 1 1 48%; margin: 10px;">
+        <img src="https://i.postimg.cc/pX2WW0wn/image.png" alt="放大图片">
+    </div>
+</div>
+
+<div class="zoom-overlay"></div>
+
+
 
 每日活跃用户数据较为稳定，三日活用户数据呈现增长趋势，波动较大；
 两组数据在12月2日都出现峰值，推测12月2日平台可能有促销活动或新功能发布，吸引了用户集中访问。
@@ -150,24 +156,47 @@ DROP TEMPORARY TABLE temp_to_delete;
 这一现象在逐日留存趋势中也有呈现：用户留存率走势基本平稳，但都在最后一天大幅上升，大量用户再次活跃。
 >留存率 = t+n日再次访问用户数/t日新增用户数
 
-[![留存率](https://i.postimg.cc/wv7WQdRs/image.png)](https://postimg.cc/Ppnzd94t)
+<div class="zoomable">
+    <img src="https://i.postimg.cc/wv7WQdRs/image.png" alt="放大图片">
+</div>
 
 #### 1.2 页面浏览
-[![页面浏览](https://i.postimg.cc/Zn6xwYb0/image.png)](https://postimg.cc/PvrDxj8k)
+<div class="zoomable">
+    <img src="https://i.postimg.cc/Zn6xwYb0/image.png" alt="放大图片">
+</div>
 平均访问深度的变化反映了用户在网站或应用中的活跃度。较高的平均访问深度表明用户在网站上停留的时间较长，访问了更多的页面。对商品品类进行筛选后会发现不同品类之间的访问深度差距较大，可以结合品类特性进行细化分析。
 
 #### 1.3 用户行为
 ##### 1.3.1 总漏斗
 >此处忽略行为先后顺序，仅考虑行为本身
 
-| [![image.png](https://i.postimg.cc/FsZjzB7t/image.png)](https://postimg.cc/D8SWY5r5) | [![image.png](https://i.postimg.cc/Zq1NXkDN/image.png)](https://postimg.cc/Lq3hZWS4) | [![image.png](https://i.postimg.cc/sX7WrntN/image.png)](https://postimg.cc/Q9NCgqNQ) |
-| --- | --- | --- |
+<div class="gallery" style="display: flex; justify-content: space-between; flex-wrap: wrap;">
+    <div class="zoomable" style="flex: 1 1 30%; margin: 10px;">
+        <a href="https://postimg.cc/D8SWY5r5" target="_blank">
+            <img src="https://i.postimg.cc/FsZjzB7t/image.png" alt="放大图片">
+        </a>
+    </div>
+    <div class="zoomable" style="flex: 1 1 30%; margin: 10px;">
+        <a href="https://postimg.cc/Lq3hZWS4" target="_blank">
+            <img src="https://i.postimg.cc/Zq1NXkDN/image.png" alt="放大图片">
+        </a>
+    </div>
+    <div class="zoomable" style="flex: 1 1 30%; margin: 10px;">
+        <a href="https://postimg.cc/Q9NCgqNQ" target="_blank">
+            <img src="https://i.postimg.cc/sX7WrntN/image.png" alt="放大图片">
+        </a>
+    </div>
+</div>
+
+<div class="zoom-overlay"></div>
 
 可以看出，页面直购的转化率明显高于另外两种路径，当路径变多，用户的决策周期变长，转化率就会相应降低，所以可以通过简化购物流程，提升转化率；但对于很多产品，决策周期是不可避免的。
 所以，加购和收藏有很多积极意义：提高用户粘性，提高相关商品的浏览量，是个性化推荐的参考等，所以对加购和收藏类的用户发放促销卡券、设置优惠提醒、策划限时抢购等活动，做好售前售后保障等，也可以很好的缩短决策周期，提升转化率。
 
 ##### 1.3.2 每小时用户行为
-[![image.png](https://i.postimg.cc/Ssx0052y/image.png)](https://postimg.cc/McN3V9m4)
+<div class="zoomable">
+    <img src="https://i.postimg.cc/Ssx0052y/image.png" alt="放大图片">
+</div>
 
 用户访问峰值在晚间21点，说明晚间20-21点用户最为活跃。因此可以考虑将大型活动设置在这一时间段。
 
@@ -190,8 +219,16 @@ DROP TEMPORARY TABLE temp_to_delete;
 - 间隔久，频次高：（01）重要保持客户；
 - 间隔久，频次低：（00）低价值用户；
 
-| [![image.png](https://i.postimg.cc/rw17Dc5V/image.png)](https://postimg.cc/DSzxN9CH) | [![image.png](https://i.postimg.cc/WpDNhFzs/image.png)](https://postimg.cc/SjhFPKcP) |
-|---------------------------|---------------------------|
+<div class="gallery" style="display: flex; justify-content: space-between;">
+    <div class="zoomable" style="flex: 1 1 48%; margin: 10px;">
+        <img src="https://i.postimg.cc/rw17Dc5V/image.png" alt="放大图片">
+    </div>
+    <div class="zoomable" style="flex: 1 1 48%; margin: 10px;">
+        <img src="https://i.postimg.cc/WpDNhFzs/image.png" alt="放大图片">
+    </div>
+</div>
+
+<div class="zoom-overlay"></div>
 
 计算各分类的用户数量，以及不同分类的购买次数展示：购买主力来源于重要价值客户，发展用户的数量比价值用户数量多，但购买次数仅占价值用户购买次数的三分之一不到，应对该类用户制定适当的营销策略促活。
 
@@ -203,12 +240,17 @@ DROP TEMPORARY TABLE temp_to_delete;
 
 #### 3.1 帕累托
 
-[![image.png](https://i.postimg.cc/gcfYRzL8/image.png)](https://postimg.cc/Z0xtzhc5)
+<div class="zoomable">
+    <img src="https://i.postimg.cc/gcfYRzL8/image.png" alt="放大图片">
+</div>
 
 根据购买次数计算品类的帕累托，并高亮累计占比前20%的品类；如有详细品类数据，可以拓展分析不同客单价区间/不同领域商品的购买行为；
 
 #### 3.2 浏览次数和购买次数散点图
-[![image.png](https://i.postimg.cc/dVFwH5B0/image.png)](https://postimg.cc/zVxs3S4m)
+
+<div class="zoomable">
+    <img src="https://i.postimg.cc/dVFwH5B0/image.png" alt="放大图片">
+</div>
 
 **用户行为**:
 
