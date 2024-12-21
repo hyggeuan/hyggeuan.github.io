@@ -33,7 +33,7 @@
 - 想将侧边目录的字体按照层级关系变化大小，但是也没有生效，所以最后直接定义了一个统一的字体
 
 ## 效果截图
-[![首页](https://i.postimg.cc/0j0Qyh5b/image.png)](https://postimg.cc/9wzVx87h)
+[![首页](https://i.postimg.cc/nVNbX39L/image.png)](https://postimg.cc/w35bPcVK)
 [![详情页](https://i.postimg.cc/Z5yGPp3L/image.png)](https://postimg.cc/TKfNfyty)
 
 
