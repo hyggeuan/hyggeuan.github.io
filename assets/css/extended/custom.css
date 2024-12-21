@@ -6,7 +6,7 @@
     padding: 20px; /* 默认内边距 */
 }
 
-/* 详情页面的特殊样式 */
+/* 页面都遵循了这个设置，上面那组设置只有first-entry生效 */
 .main {
     max-width: calc(var(--main-width) + var(--gap) * 10) !important; /* 详情页面的较大宽度 */
     margin-left: auto !important; /* 居中对齐 */
