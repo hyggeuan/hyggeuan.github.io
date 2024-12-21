@@ -10,13 +10,14 @@
  * the children are placed in the second column. */
 @media (min-width: 1200px) {
     .post-single {
-        grid-template-columns: minmax(0, 1fr) minmax(0, 3fr);
-        grid-column-gap: 40px; /* 设置列间距为40px */
+        grid-template-columns: minmax(0, 1fr) minmax(0, 2.5fr);
+        grid-column-gap: 35px; /* 设置列间距为40px */
     }
     .post-single .toc {
         grid-column: 1;
         position: sticky;
         top: 10px;
+        font-size: 14px;
     }
 }
 
@@ -51,6 +52,7 @@
 }
 
 /* 根据标题层级调整TOC项的缩进和字体大小 */
+/* 不知道为什么没有生效，所以直接在上方代码里面指定字体大小 */
 .post-single .toc ul {
     list-style-type: none;
     padding-left: 0;
