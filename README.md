@@ -32,10 +32,8 @@
 - 不知道如何正确定义类名，我希望给“分类”、“标签”、“搜索”和“关于”界面改成居中显示，但是因为类名无法区分，导致在custom.css文件中指定的特定格式都没有应用，统一跟随了.main的格式。
 - 想将侧边目录的字体按照层级关系变化大小，但是也没有生效，所以最后直接定义了一个统一的字体
 
-## 网页首页截图
-[![image.png](https://i.postimg.cc/L8Qr3T8J/image.png)](https://postimg.cc/VJMGYXMw)
+## 效果截图
+[![首页](https://i.postimg.cc/0j0Qyh5b/image.png)](https://postimg.cc/9wzVx87h)
+[![详情页](https://i.postimg.cc/Z5yGPp3L/image.png)](https://postimg.cc/TKfNfyty)
 
-<video width="320" height="240" controls>
-  <source src="static/测试视频.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+
