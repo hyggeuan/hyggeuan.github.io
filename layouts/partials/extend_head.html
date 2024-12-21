@@ -9,9 +9,11 @@
 <link rel="icon" href="{{ "/static/favicon.png" | relURL }}" type="image/png">
 
 {{ partial "mathjax.html" . }}
-{{- /* Head custom content area end */ -}}
 
 {{ if or .IsHome .IsPage }}
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
   <!-- lightGallery.js -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightGallery-js/1.4.0/css/lightgallery.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lightGallery-js/1.4.0/js/lightGallery.min.js"></script>
@@ -19,29 +21,28 @@
   <!-- magnify.js -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnify/1.2.5/magnify.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/magnify/1.2.5/jquery.magnify.min.js"></script>
-{{ end }}
 
-<script>
+  <!-- Initialization script -->
+  <script>
     document.addEventListener("DOMContentLoaded", function() {
         // 初始化 magnify.js
         $('.magnify').magnify();
-    
+
         // 初始化 lightGallery.js
         lightGalleryjsInit();
     });
-    
+
     function lightGalleryjsInit() {
         var lightbox = document.querySelectorAll('#content a[data-lightbox]');
         if (lightbox.length > 0) {
-            lightGalleryjs(lightbox);
+            lightGallery.init(lightbox, {
+                download: false, // 如果不需要下载按钮，可以设置为 false
+                zoom: true,      // 启用缩放功能
+                thumbnail: true, // 显示缩略图
+            });
         }
     }
-    
-    function lightGalleryjs(elements) {
-        return lightGallery.js(elements, {
-            download: false, // 如果不需要下载按钮，可以设置为 false
-            zoom: true,      // 启用缩放功能
-            thumbnail: true, // 显示缩略图
-        });
-    }
-    </script>
+  </script>
+{{ end }}
+
+{{- /* Head custom content area end */ -}}
