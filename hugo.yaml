@@ -45,7 +45,7 @@ languages:
           weight: 21
 
 # 主题的配置(基本上是)
-paginate: 8 #每页展示的文章数量,这个没找到文档,应该是主题自己设置的
+paginate: 10 
 
 params:
   env: production # to enable google analytics, opengraph, twwitter-cards and-schema
