@@ -11,3 +11,22 @@
 {{ partial "mathjax.html" . }}
 {{- /* Head custom content area end */ -}}
 
+{{ if or .IsHome .IsPage }}
+  <!-- lightGallery.js -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightGallery-js/1.4.0/css/lightgallery.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightGallery-js/1.4.0/js/lightGallery.min.js"></script>
+
+  <!-- magnify.js -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnify/1.2.5/magnify.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/magnify/1.2.5/jquery.magnify.min.js"></script>
+{{ end }}
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // 初始化 magnify.js
+        $('.magnify').magnify();
+    
+        // 初始化 lightGallery.js
+        $('#content a[data-lightbox]').lightGallery();
+    });
+    </script>

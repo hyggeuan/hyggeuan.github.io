@@ -14,6 +14,10 @@ tags = ["mysql", "powerbi", "userbehaviour"]
 [淘宝用户购物行为数据集](https://tianchi.aliyun.com/dataset/649)
 
 #### 1.2 结构
+
+<a href="#" data-download-href="https://i.postimg.cc/CxGzPBpj/image.png" data-lightbox="image-1" data-title="Click to enlarge">
+    <img src="https://i.postimg.cc/CxGzPBpj/image.png" alt="放大图片" class="magnify" style="max-width: 100%; cursor: zoom-in;">
+</a>
 [![image.png](https://i.postimg.cc/CxGzPBpj/image.png)](https://postimg.cc/QFM8VMtt)
 [![image.png](https://i.postimg.cc/6QzTKk3q/image.png)](https://postimg.cc/McMzbr1J)
 
