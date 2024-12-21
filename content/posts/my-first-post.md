@@ -17,13 +17,10 @@ tags = ["mysql", "powerbi", "userbehaviour"]
 
 ## 查看图片
 
-{{< magnify src="https://i.postimg.cc/CxGzPBpj/image.png" alt="放大图片">}}
-
-<a href="#" data-download-href="https://i.postimg.cc/CxGzPBpj/image.png" data-lightbox="image-1" data-title="Click to enlarge">
+<a href="https://i.postimg.cc/CxGzPBpj/image.png" data-lightbox="image-1" data-title="Click to enlarge">
     <img src="https://i.postimg.cc/CxGzPBpj/image.png" alt="放大图片" class="magnify" style="max-width: 100%; cursor: zoom-in;">
 </a>
-[![image.png](https://i.postimg.cc/CxGzPBpj/image.png)](https://postimg.cc/QFM8VMtt)
-[![image.png](https://i.postimg.cc/6QzTKk3q/image.png)](https://postimg.cc/McMzbr1J)
+
 
 ### 2. 导入数据库
 原有数据集规模为亿级，MySQL运行过载，所以截取前1千万条记录做处理和分析

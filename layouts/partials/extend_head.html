@@ -1,6 +1,4 @@
 {{- /* Head custom content area start */ -}}
-{{- /*     Insert any custom code (web-analytics, resources, etc.) - it will appear in the <head></head> section of every page. */ -}}
-{{- /*     Can be overwritten by partial with the same name in the global layouts. */ -}}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
@@ -11,6 +9,7 @@
 {{ partial "mathjax.html" . }}
 
 {{ if or .IsHome .IsPage }}
+  <!-- lightGallery.js and magnify.js dependencies -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightGallery-js/1.4.0/css/lightgallery.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lightGallery-js/1.4.0/js/lightGallery.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnify/1.2.5/magnify.min.css">

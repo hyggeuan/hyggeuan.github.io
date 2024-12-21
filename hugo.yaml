@@ -70,14 +70,15 @@ params:
   images: ["https://i.postimg.cc/7hwBy7VS/calcr.png"] #缺省的图片,比如,博客的封面
   DateFormat: "2006-01-02" #这个时间是作者自己写的,只能这样写
 
-  customHead = """
+  
+  # 自定义头部内容
+  customHead: |
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightGallery-js/1.4.0/css/lightgallery.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnify/1.2.5/magnify.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightGallery-js/1.4.0/js/lightGallery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/magnify/1.2.5/jquery.magnify.min.js"></script>
     <script src="/js/lightbox-magnify.js"></script>
-  """
 
 #.首页的文章上方的一些信息
   homeInfoParams:
