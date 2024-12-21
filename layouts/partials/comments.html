@@ -1,3 +1,4 @@
+<div id="tw-comment"></div>
 <script>
     // 获取存储的主题偏好，如果未设置则默认为 light
     const getStoredTheme = () => {
@@ -49,8 +50,5 @@
         if (themeFloatSwitcher) {
             themeFloatSwitcher.addEventListener("click", setGiscusTheme);
         }
-
-        // 初始化 Giscus 主题
-        setGiscusTheme();
     });
 </script>
