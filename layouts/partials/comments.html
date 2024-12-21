@@ -1,16 +1,19 @@
-<div id="tw-comment"></div>
 <script>
-    // 默认是暗色，根目录下的配置中的主题默认也是暗色
-    const getStoredTheme = () => localStorage.getItem("pref-theme") === "light" ? "{{ .Site.Params.giscus.lightTheme }}" : "{{ .Site.Params.giscus.darkTheme }}";
+    // 获取存储的主题偏好，如果未设置则默认为 light
+    const getStoredTheme = () => {
+        const storedTheme = localStorage.getItem("pref-theme");
+        return storedTheme ? (storedTheme === "light" ? "{{ .Site.Params.giscus.lightTheme }}" : "{{ .Site.Params.giscus.darkTheme }}") : "{{ .Site.Params.giscus.lightTheme }}";
+    };
+
     const setGiscusTheme = () => {
         const sendMessage = (message) => {
             const iframe = document.querySelector('iframe.giscus-frame');
             if (iframe) {
                 iframe.contentWindow.postMessage({giscus: message}, 'https://giscus.app');
             }
-        }
-        sendMessage({setConfig: {theme: getStoredTheme()}})
-    }
+        };
+        sendMessage({setConfig: {theme: getStoredTheme()}});
+    };
 
     document.addEventListener("DOMContentLoaded", () => {
         const giscusAttributes = {
@@ -24,7 +27,7 @@
             "data-reactions-enabled": "{{ .Site.Params.giscus.reactionsEnabled }}",
             "data-emit-metadata": "{{ .Site.Params.giscus.emitMetadata }}",
             "data-input-position": "{{ .Site.Params.giscus.inputPosition }}",
-            "data-theme": getStoredTheme(),
+            "data-theme": getStoredTheme(), // 使用 getStoredTheme() 来动态获取主题
             "data-lang": "{{ .Site.Params.giscus.lang }}",
             "data-loading": "lazy",
             "crossorigin": "anonymous",
@@ -33,7 +36,8 @@
         // 动态创建 giscus script
         const giscusScript = document.createElement("script");
         Object.entries(giscusAttributes).forEach(
-                ([key, value]) => giscusScript.setAttribute(key, value));
+            ([key, value]) => giscusScript.setAttribute(key, value)
+        );
         document.querySelector("#tw-comment").appendChild(giscusScript);
 
         // 页面主题变更后，变更 giscus 主题
@@ -45,5 +49,8 @@
         if (themeFloatSwitcher) {
             themeFloatSwitcher.addEventListener("click", setGiscusTheme);
         }
+
+        // 初始化 Giscus 主题
+        setGiscusTheme();
     });
 </script>

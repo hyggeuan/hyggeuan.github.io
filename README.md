@@ -30,7 +30,12 @@
 
 ## 没能处理好的部分
 - 不知道如何正确定义类名，我希望给“分类”、“标签”、“搜索”和“关于”界面改成居中显示，但是因为类名无法区分，导致在custom.css文件中指定的特定格式都没有应用，统一跟随了.main的格式。
-- 跟随教程给详情页定义了class类名，但是上传到网页后，html的审查元素中并没有显示我定义的类名，所以目前有几个界面是左侧顶格状态。
+- 想将侧边目录的字体按照层级关系变化大小，但是也没有生效，所以最后直接定义了一个统一的字体
 
 ## 网页首页截图
 [![image.png](https://i.postimg.cc/L8Qr3T8J/image.png)](https://postimg.cc/VJMGYXMw)
+
+<video width="320" height="240" controls>
+  <source src="static/测试视频.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
