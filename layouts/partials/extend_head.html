@@ -9,12 +9,55 @@
 {{ partial "mathjax.html" . }}
 
 {{ if or .IsHome .IsPage }}
-  <!-- lightGallery.js and magnify.js dependencies -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightGallery-js/1.4.0/css/lightgallery.min.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightGallery-js/1.4.0/js/lightGallery.min.js"></script>
+  <!-- 自定义的缩放样式 -->
+  <style>
+    /* zoomable 容器 */
+    .zoomable {
+        position: relative;
+        display: inline-block;
+        cursor: zoom-in;
+        overflow: hidden; /* 防止图片放大后溢出 */
+    }
+
+    /* 图片样式 */
+    .zoomable img {
+        transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain; /* 保持图片比例 */
+    }
+
+    /* 放大后的图片遮罩层 */
+    .zoom-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8); /* 背景变暗 */
+        display: none; /* 默认隐藏 */
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+    }
+
+    /* 放大图片的容器 */
+    .zoomable img.zoomed {
+        position: fixed;
+        max-width: 90%; /* 确保图片与页面有边距 */
+        max-height: 90%;
+        transform: translate(-50%, -50%) scale(1); /* 居中显示 */
+        top: 50%;
+        left: 50%;
+        z-index: 1001;
+        cursor: zoom-out;
+    }
+  </style>
+
+  <!-- lightGallery.js and magnify.js dependencies (如果不再需要，可以移除) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnify/1.2.5/magnify.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/magnify/1.2.5/jquery.magnify.min.js"></script>
-  <script src="/js/lightbox-magnify.js"></script>
+  <script src="/js/zoom-image.js"></script>
 {{ end }}
 {{- /* Head custom content area end */ -}}

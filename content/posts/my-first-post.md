@@ -17,9 +17,17 @@ tags = ["mysql", "powerbi", "userbehaviour"]
 
 ## 查看图片
 
-<a href="https://i.postimg.cc/CxGzPBpj/image.png" data-lightbox="image-1" data-title="Click to enlarge">
-    <img src="https://i.postimg.cc/CxGzPBpj/image.png" alt="放大图片" class="magnify" style="max-width: 100%; cursor: zoom-in;">
+
+通义千问
+<a href="#" class="zoomable" data-src="https://i.postimg.cc/CxGzPBpj/image.png">
+    <img src="https://i.postimg.cc/CxGzPBpj/image.png" alt="放大图片" style="max-width: 100%; cursor: zoom-in;">
 </a>
+
+CHATGPT
+<div class="zoomable">
+    <img src="https://i.postimg.cc/CxGzPBpj/image.png" alt="放大图片">
+</div>
+
 
 
 ### 2. 导入数据库
@@ -128,7 +136,7 @@ DROP TEMPORARY TABLE temp_to_delete;
 [![思维导图](https://i.postimg.cc/zDHWwfvk/image.png)](https://postimg.cc/HjHVddQJ)
 
 
-### [PowerBI在线看板](https://app.powerbi.com/view?r=eyJrIjoiOWE2MDczOTktMWI5Yy00MTZlLTkxOGYtOTQzMzdlNDA2MDliIiwidCI6ImFiZDJiNzlkLWZjZDctNDdhOC1hMWVlLTU0MDdkODM5N2Y1MSJ9)
+### [PowerBI在线看板：UserBehaviour](https://app.powerbi.com/view?r=eyJrIjoiOWE2MDczOTktMWI5Yy00MTZlLTkxOGYtOTQzMzdlNDA2MDliIiwidCI6ImFiZDJiNzlkLWZjZDctNDdhOC1hMWVlLTU0MDdkODM5N2Y1MSJ9)
 
 
 ### 1. 用户流量
