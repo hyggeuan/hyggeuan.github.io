@@ -186,3 +186,11 @@
     background-color: rgb(70, 70, 75); /* 直接指定悬停时的背景色 */
     color: #fff; /* 直接指定悬停时的文字颜色 */
 }
+
+.post-content a {
+    color: blue; /* 设置文章内链接的颜色为蓝色 */
+  }
+  
+.post-content a:visited {
+    color: purple; /* 可选：设置访问过的链接颜色为紫色 */
+  }
