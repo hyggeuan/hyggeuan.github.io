@@ -155,7 +155,7 @@ tags = ["powerbi", "powerquery"]
     <img src="https://i.postimg.cc/SKZW1M1x/image.png" alt="放大图片">
 </div>
 
-- 当页面出现筛选时，筛选器按钮会出现"❗"提示，表明当前页面所展示的是部分数据；此时可以通过旁边的重置按钮清楚所有筛选。
+- 当页面出现筛选时，筛选器按钮会出现"❗"提示，表明当前页面所展示的是部分数据；此时可以通过旁边的重置按钮清除所有筛选。
 <div class="zoomable">
     <img src="https://i.postimg.cc/sDF5Lym7/image.png" alt="放大图片">
 </div>
