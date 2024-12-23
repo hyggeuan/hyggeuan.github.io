@@ -131,8 +131,8 @@ DROP TEMPORARY TABLE temp_to_delete;
 </div>
 
 
-### [PowerBI在线看板：UserBehaviour](https://app.powerbi.com/view?r=eyJrIjoiOWE2MDczOTktMWI5Yy00MTZlLTkxOGYtOTQzMzdlNDA2MDliIiwidCI6ImFiZDJiNzlkLWZjZDctNDdhOC1hMWVlLTU0MDdkODM5N2Y1MSJ9)
-
+### 交互看板展示
+<iframe title="User Behaviour" width="600" height="373.5" src="https://app.powerbi.com/view?r=eyJrIjoiOWE2MDczOTktMWI5Yy00MTZlLTkxOGYtOTQzMzdlNDA2MDliIiwidCI6ImFiZDJiNzlkLWZjZDctNDdhOC1hMWVlLTU0MDdkODM5N2Y1MSJ9" frameborder="0" allowFullScreen="true"></iframe>
 
 ### 1. 用户流量
 #### 1.1 日活跃用户 (DAU) 和三日活跃用户 (3-DAU)
@@ -164,6 +164,7 @@ DROP TEMPORARY TABLE temp_to_delete;
 <div class="zoomable">
     <img src="https://i.postimg.cc/Zn6xwYb0/image.png" alt="放大图片">
 </div>
+
 平均访问深度的变化反映了用户在网站或应用中的活跃度。较高的平均访问深度表明用户在网站上停留的时间较长，访问了更多的页面。对商品品类进行筛选后会发现不同品类之间的访问深度差距较大，可以结合品类特性进行细化分析。
 
 #### 1.3 用户行为
@@ -191,14 +192,17 @@ DROP TEMPORARY TABLE temp_to_delete;
 <div class="zoom-overlay"></div>
 
 可以看出，页面直购的转化率明显高于另外两种路径，当路径变多，用户的决策周期变长，转化率就会相应降低，所以可以通过简化购物流程，提升转化率；但对于很多产品，决策周期是不可避免的。
-所以，加购和收藏有很多积极意义：提高用户粘性，提高相关商品的浏览量，是个性化推荐的参考等，所以对加购和收藏类的用户发放促销卡券、设置优惠提醒、策划限时抢购等活动，做好售前售后保障等，也可以很好的缩短决策周期，提升转化率。
+
+所以，加购和收藏有很多积极意义：提高用户粘性，提高相关商品的浏览量，是个性化推荐的参考等.
+
+对加购和收藏类的用户发放促销卡券、设置优惠提醒、策划限时抢购等活动，做好售前售后保障等，也可以很好的缩短决策周期，提升转化率。
 
 ##### 1.3.2 每小时用户行为
 <div class="zoomable">
     <img src="https://i.postimg.cc/Ssx0052y/image.png" alt="放大图片">
 </div>
 
-用户访问峰值在晚间21点，说明晚间20-21点用户最为活跃。因此可以考虑将大型活动设置在这一时间段。
+用户访问峰值在晚间21点，说明晚间20-21点用户最为活跃。因此可以考虑将新品发布、大型活动等设置在这一时间段，充分利用流量优势。
 
 同时，可以选取流量相对较少的时间段进行新版本发布等活动，减少对用户体验的影响，同时减轻服务器压力。
 
@@ -230,9 +234,14 @@ DROP TEMPORARY TABLE temp_to_delete;
 
 <div class="zoom-overlay"></div>
 
-计算各分类的用户数量，以及不同分类的购买次数展示：购买主力来源于重要价值客户，发展用户的数量比价值用户数量多，但购买次数仅占价值用户购买次数的三分之一不到，应对该类用户制定适当的营销策略促活。
+计算各分类的用户数量，以及不同分类的购买次数展示：购买主力为重要价值客户，发展用户的数量比价值用户数量多，但购买次数仅占价值用户购买次数的三分之一不到，应当积极利用这部分客户资源。
 
-此处的分类依据全平台消费记录，实际业务中应当根据不同店铺/品牌/品类进行细化拆解。
+此类用户的消费特征是消费时间间隔短，但消费频次低，造成这种特征的原因很多，从商品角度来看，用户购买耐用品、高客单价商品或者季节性特定商品会出现这样的特征，可以从以下角度制定市场策略：
+- 追加购买：对产品进行升级换代、配件更新等，促进用户的追加购买；
+- 二次销售：分析用户购买历史，发现二次销售机会（例如用户近期购买了笔记本电脑，那么很可能会需要蓝牙鼠标、外接键盘等）；
+- 建立品牌信任度：通过提升产品质量售后服务等，提升用户对品牌的信任度和忠诚度，保持与消费者之间的沟通互动，使私域池保持活跃。
+
+此处的分类依据全平台消费记录，实际业务中应当结合不同店铺/品牌/品类进行细化拆解。
 
 
 
