@@ -1,5 +1,5 @@
 +++
-title = 'BI - User Behaviour'
+title = 'BI - Ali User Behaviour'
 categories = ["可视化"]
 tags = ["powerbi"]
 +++
