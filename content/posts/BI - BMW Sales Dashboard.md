@@ -124,7 +124,7 @@ tags = ["powerbi", "powerquery"]
 
 ### 3.3 各车系销售额的时间维度波动
 
-此处根据展示所有年份及其月份的销售额波动折线图，并对各年份销售额最高月份和最低月份进行标注。
+此处展示所有年份及其月份的销售额波动折线图，并对各年份销售额最高月份和最低月份进行标注。
 
 <div class="zoomable">
     <img src="https://i.postimg.cc/VvZBSbMh/image.png" alt="放大图片">
