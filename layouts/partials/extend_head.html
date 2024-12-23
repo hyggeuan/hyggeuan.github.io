@@ -34,7 +34,7 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: rgba(0, 0, 0, 0.8); /* 背景变暗 */
+        background-color: rgba(51, 50, 50, 0.7); /* 背景变暗 */
         display: none; /* 默认隐藏 */
         align-items: center;
         justify-content: center;
@@ -52,6 +52,11 @@
         z-index: 1001;
         cursor: zoom-out;
     }
+
+    /* 当遮罩层激活时，body 添加 zoom-overlay-active 类 */
+    body.zoom-overlay-active .zoom-overlay {
+        display: flex;
+    }
   </style>
 
   <!-- lightGallery.js and magnify.js dependencies (如果不再需要，可以移除) -->
@@ -60,4 +65,3 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/magnify/1.2.5/jquery.magnify.min.js"></script>
   <script src="/js/zoom-image.js"></script>
 {{ end }}
-{{- /* Head custom content area end */ -}}

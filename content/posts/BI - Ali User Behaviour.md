@@ -10,7 +10,7 @@ tags = ["powerbi"]
 
 
 # 前言
-- 数据来源：[淘宝用户购物行为数据集](https://tianchi.aliyun.com/dataset/649)
+- 数据来源：[淘宝用户购物行为数据集](https://tianchi.aliyun.com/dataset/649)；
 - 这份可视化的梳理可以参考我的另一篇文章[用户行为分析](https://hyggeuan.github.io/posts/my-first-post/)，原始数据的清洗是在MySQL完成的。因为报表界面和分析已在另一篇文章中详细介绍，所以此处简单介绍一下界面的基本信息。
 
 # 界面一、Users & Goods
