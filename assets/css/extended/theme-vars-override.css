@@ -8,15 +8,15 @@
     --radius: 8px;
 
     /* 白天模式的颜色 */
-    --theme-light: #e4e8f1;
-    --entry-light: #bbccf5;
+    --theme-light: #ffffff;
+    --entry-light: #dfe8ff;
     --primary-light: rgb(22, 22, 47);
     --secondary-light: rgb(20, 38, 57);
     --tertiary-light: rgb(65, 66, 68);
     --content-light: rgb(196, 196, 197);
     --code-block-bg-light: #e0e0e8;
     --code-bg-light: rgb(211, 211, 225);
-    --border-light: #bbc5dd;
+    --border-light: #ffffff;
     --toc-bg-light: #f0f4f8; /* 稍微浅一点的 TOC 背景色 */
 
     /* 默认使用白天模式的颜色 */
